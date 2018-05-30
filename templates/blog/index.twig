@@ -1,0 +1,90 @@
+{% extends "_layout" %}
+{% block _inline_css %}
+    <style>
+        {{ source (_self.getTemplateName() ~ '_critical.min.css', ignore_missing = true) }}
+    </style>
+{% endblock %}
+
+{% block content %}
+    {% include "_includes/heading-wrap.twig" %}
+
+    <section class="main-content section">
+        <div class="container">
+            <div class="row mb-3">
+                {% paginate craft.entries.section('blog').limit(20) as pageInfo, pageEntries %}
+
+                {% for entry in pageEntries %}
+                    <div class="col-md-6 mb-3">
+                        <article class="blog-entry">
+                            {% if entry.featuredBlogImage is not empty %}
+                                {% set image = entry.featuredBlogImage.one() %}
+                                {% set transformedImages = craft.imager.transformImage(image,
+                                    [
+                                        { width: 1200, ratio: 4/3 },
+                                        { width: 1024, ratio: 4/3 },
+                                        { width: 768, ratio: 4/3, jpegQuality: 65 },
+                                    ],
+                                    {
+                                        format: 'jpg',
+                                        allowUpscale: true,
+                                        mode: 'crop',
+                                        jpegQuality: 80,
+                                        interlace: true
+                                    }
+                                    ) %}
+                                <a href="{{ entry.url }}">
+                                    <img class="img-fluid mb-3"
+                                         src="{{ transformedImages[1].url }}"
+                                         sizes="100vw"
+                                         srcset="{{ craft.imager.srcset(transformedImages) }}"
+                                         alt="{{ image.title }}">
+                                    <h3 class="blog-title">{{ entry.title }}</h3>
+                                    <div class="mb-3">{{ entry.body|striptags|slice(0, 160) }}...</div>
+                                    <p>Posted on {{ entry.postDate.format('F d, Y') }}</p>
+                                </a>
+                            {% else %}
+                                {% set image = global.blogFallbackImage.first() %}
+                                {% set transformedImages = craft.imager.transformImage(image,
+                                    [
+                                        { width: 1200, ratio: 4/3 },
+                                        { width: 1024, ratio: 4/3 },
+                                        { width: 768, ratio: 4/3, jpegQuality: 65 },
+                                    ],
+                                    {
+                                        format: 'jpg',
+                                        allowUpscale: true,
+                                        mode: 'crop',
+                                        jpegQuality: 80,
+                                        position: image.focusPctX ~ '% ' ~ image.focusPctY ~ '%',
+                                        interlace: true
+                                    }
+                                    ) %}
+                                <a href="{{ entry.url }}">
+                                    <img class="img-fluid mb-3"
+                                         src="{{ transformedImages[1].url }}"
+                                         sizes="100vw"
+                                         srcset="{{ craft.imager.srcset(transformedImages) }}"
+                                         alt="{{ image.title }}">
+                                    <h3 class="blog-title">{{ entry.title }}</h3>
+                                    <div class="mt-3 mb-3">{{ entry.body|striptags|slice(0, 160) }}...</div>
+                                    <div>Posted {{ entry.postDate.format('F d, Y') }}</div>
+                                </a>
+                            {% endif %}
+                        </article>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    {% if pageInfo.prevUrl %}<a href="{{ pageInfo.prevUrl }}" class="btn btn-default">Previous
+                        Page</a>{% endif %}
+
+                </div>
+                <div class="col-md-6 text-left text-md-right">
+                    {% if pageInfo.nextUrl %}<a href="{{ pageInfo.nextUrl }}" class="btn btn-default">Next
+                        Page</a>{% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

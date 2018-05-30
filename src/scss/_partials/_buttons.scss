@@ -1,0 +1,64 @@
+// Buttons
+
+.btn {
+  font-family: $font-family-heading;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  margin: 5px 3px;
+}
+
+.btn-default {
+  background-color: $primary;
+  color: $white;
+  &:hover {
+    color: $white;
+    background-color: scale-color($primary, $lightness: -15%);
+  }
+}
+
+.btn-primary {
+  &:hover {
+  }
+}
+
+.btn-secondary {
+  color: $white;
+  &:hover {
+
+  }
+}
+
+.btn-tertiary {
+  background-color: $tertiary;
+  color: $white;
+  &:hover {
+    background-color: scale-color($tertiary, $lightness: -15%);
+    color: $white;
+  }
+}
+
+.btn-success {
+  &:hover {
+  }
+}
+
+.btn-danger {
+  &:hover {
+  }
+}
+.btn-warning {
+  &:hover {
+  }
+}
+.btn-info {
+  &:hover {
+  }
+}
+.btn-light {
+  &:hover {
+  }
+}
+.btn-dark {
+  &:hover {
+  }
+}

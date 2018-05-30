@@ -1,0 +1,73 @@
+{% extends "_layout" %}
+{% block _inline_css %}
+    <style>
+        {{ source (_self.getTemplateName() ~ '_critical.min.css', ignore_missing = true) }}
+    </style>
+{% endblock %}
+
+{% block content %}
+    {% set image = entry.featuredImage.one() %}
+    {% set transformedImage = craft.imager.transformImage(image,
+        {
+            width: 1200,
+            format: 'jpg',
+            jpegQuality: 80,
+            interlace: true,
+            position: 'center-center'
+        }) %}
+    <section
+            style="background-image: url('{{ transformedImage.url }}');"
+            class="hero-content text-center">
+        <div class="container">
+            <div class="row justify-content-center" data-aos="zoom-in">
+                <div class="col-md-10">
+                    <h1 class="h3">{{ entry.heading }}</h1>
+                    <div class="subhead mb-3">{{ entry.subheading }}</div>
+                    <a class="btn btn-primary btn-lg" href="#" role="button">Download Free Trial &raquo;</a>
+                    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a>
+                </div>
+            </div>
+        </div>
+    </section><!-- /.hero-content -->
+
+    <section class="main-content section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <h2 class="heading">{{ entry.spotlightHeading }}</h2>
+                </div>
+            </div>
+            <div class="row text-center justify-content-center">
+                {% for block in entry.spotlights.all() %}
+                    <div class="col-md-4 col-sm-6 mb-md-0 mb-3 d-flex flex-column">
+                        {% set image = block.image.one() %}
+                        {% set transformedImage = craft.imager.transformImage(image,
+                            [
+                                { width: 1200, ratio: 1/1 },
+                                { width: 1024, ratio: 1/1 },
+                                { width: 768, ratio: 1/1, jpegQuality: 65 },
+                            ],
+                            {
+                                jpegQuality: 80,
+                                interlace: true,
+                                position: 'center-center'
+                            }) %}
+                        {% for image in block.image.all() %}
+                            <a href="{% for entry in block.spotlightUrl.limit(1).all() %}{{ entry.url }}{% endfor %}"><img
+                                        class="spotlight img-fluid mb-3" data-aos="zoom-in"
+                                        src="{{ transformedImage[1].url }}"
+                                        sizes="100vw"
+                                        srcset="{{ craft.imager.srcset(transformedImage) }}"
+                                        alt="{{ image.title }}"></a>
+                        {% endfor %}
+                        <h3>{{ block.heading }}</h3>
+                        <div class="mt-auto mb-1">{{ block.text }}</div>
+                        <a class="btn btn-secondary mt-auto"
+                           href="{% for entry in block.spotlightUrl.limit(1).all() %}{{ entry.url }}{% endfor %}">{{ block.buttonText }}</a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section><!-- /.alt-content -->
+
+{% endblock %}

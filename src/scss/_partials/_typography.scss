@@ -1,0 +1,72 @@
+// Typography
+
+::selection {
+  background-color: $primary;
+  color: $white;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: $font-family-heading;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+a {
+  transition: .4s ease;
+}
+
+h1:only-child,
+h2:only-child,
+h3:only-child,
+h4:only-child,
+h5:only-child,
+h6:only-child,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  margin-bottom: 0;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+blockquote {
+  border-left: 3px solid $primary;
+  padding: 1rem;
+  font-size: $h5-font-size;
+  font-style: italic;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  &.heading {
+    text-align: center;
+    color: $primary;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 3rem;
+    &:before, &:after {
+      @include media-breakpoint-up(sm) {
+        background-color: $primary;
+        content: '\a0';
+        width: 75px;
+        height: 3px;
+        position: relative;
+        top: 0.55em;
+        margin-right: 1em;
+        margin-left: 1em;
+      }
+    }
+    span {
+      @include media-breakpoint-up(sm) {
+        background-color: $white;
+        padding: 0 15px;
+      }
+    }
+  }
+}

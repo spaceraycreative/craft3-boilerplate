@@ -1,0 +1,26 @@
+{%  if entry is defined %}
+{% set image = entry.featuredImage.one() %}
+    {% set transformedImage = craft.imager.transformImage(image,
+        {
+            width: 1200,
+            format: 'jpg',
+            jpegQuality: 80,
+            interlace: true,
+            position: 'center-center'
+        }) %}
+{% endif %}
+<section
+        {%  if entry.featuredImage is defined %}{% if entry.featuredImage|length %} style="background-image: url('{{ transformedImage.url }}');" {% endif %}{% endif %}
+        class="heading-wrap">
+    <div class="container">
+        <div class="row" data-aos="zoom-in">
+            <div class="col-md-12">
+                {% if entry.title is defined %}
+                    <h1>{{ entry.title }}</h1>
+                {% else %}
+                    <h1>{{ title }}</h1>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>

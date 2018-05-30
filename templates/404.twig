@@ -1,0 +1,24 @@
+{% extends "_layout" %}
+{% set title = "404" %}
+
+{% block content %}
+    <section class="main-content section">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-5 col-sm-12 text-md-right text-sm-center">
+                    <h1>404 Error</h1>
+                    <p>Oops. The page you have been looking for has either been moved, or
+                        doesn't exist</p>
+                    <div class="mb-1"><strong>Error Code: 404</strong></div>
+                    <a class="btn btn-primary" href="{{ siteUrl }}">Take Me Home!</a>
+                </div>
+                <div class="col-md-4 offset-md-1 col-sm-12">
+                    <div class="img-404">
+                        <img class="img-fluid" src="img/404.svg" alt="404 Error"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- /.main-content -->
+    {% include "_includes/contact.twig" %}
+{% endblock %}

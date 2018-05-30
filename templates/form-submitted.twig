@@ -1,0 +1,21 @@
+{% extends "_layout" %}
+{% block _inline_css %}
+    <style>
+        {{ source (_self.getTemplateName() ~ '_critical.min.css', ignore_missing = true) }}
+    </style>
+{% endblock %}
+
+{% block content %}
+    <section class="heading-content section">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <h1>{{ entry.title }}</h1>
+                    <div>
+                        {{ entry.body }}
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.container -->
+    </section><!-- /.heading-content -->
+{% endblock %}

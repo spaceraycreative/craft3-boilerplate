@@ -1,0 +1,558 @@
+{% extends "_layout" %}
+{% block _inline_css %}
+    <style>
+        {{ source (_self.getTemplateName() ~ '_critical.min.css', ignore_missing = true) }}
+    </style>
+{% endblock %}
+{% set title = "Style GUide" %}
+{% block content %}
+    {% include "_includes/heading-wrap.twig" %}
+
+    <section class="main-content section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="heading">Core Elements</h2>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <h1>Heading One</h1>
+                    <h2>Heading Two</h2>
+                    <h3>Heading Three</h3>
+                    <h4>Heading Four</h4>
+                    <h5>Heading Five</h5>
+                    <h6>Heading Six</h6>
+                    <hr/>
+                </div>
+                <div class="col-md-4">
+                    <ul>
+                        <li>Some List Item</li>
+                        <li>Some List Item
+                            <ul>
+                                <li>Some Sub list Item</li>
+                            </ul>
+                        </li>
+                        <li>Some List Item</li>
+                    </ul>
+                    <hr/>
+                    <ol>
+                        <li>Some List Item</li>
+                        <li>Some List Item
+                            <ol>
+                                <li>Some Sub list Item</li>
+                            </ol>
+                        </li>
+                        <li>Some List Item</li>
+                    </ol>
+                </div>
+                <div class="col-md-4">
+                    <div><strong>This is a sentence with some bolded text.</strong></div>
+                    <div class="mb-3"><em>This is a sentence with some italic text.</em></div>
+                    <hr>
+                    <a href="#">This</a> is a default text link.
+                    <hr>
+                    <blockquote>This is a block quote with some witty text.</blockquote>
+                </div>
+            </div><!-- /.row -->
+            <div class="row">
+                <div class="col-md-6">
+                    <h1>Heading One</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet architecto corporis cum
+                        ducimus est excepturi incidunt ipsa laudantium neque nobis, odio pariatur perspiciatis quam
+                        quod,
+                        recusandae sit tempora veritatis.</p>
+                    <h2>Heading Two</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, aliquid architecto assumenda aut
+                        delectus dolorem doloribus dolorum eligendi inventore ipsum, iste maiores nihil quae similique
+                        sunt
+                        velit, vero voluptates voluptatibus.</p>
+                    <h3>Heading Three</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur culpa cumque dignissimos ex
+                        id
+                        mollitia nobis, numquam porro saepe! Doloremque quasi repellendus suscipit. Blanditiis
+                        distinctio
+                        incidunt, ipsa minus quasi saepe?</p>
+                </div>
+                <div class="col-md-6">
+                    <h4>Heading Four</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias, architecto asperiores dolores
+                        eos fugit impedit inventore ipsum iste odio officiis praesentium, quaerat quidem quis repellat
+                        suscipit tempora totam voluptates?</p>
+                    <h5>Heading Five</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur culpa delectus dicta dolore
+                        ducimus ex inventore laboriosam libero maiores neque nisi, nobis, nulla quasi sapiente sed unde
+                        veritatis. Itaque, suscipit.</p>
+                    <h6>Heading Six</h6>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab distinctio dolore eum illum nihil
+                        odio quo soluta. Accusamus at autem consequatur distinctio hic iure quas quasi quos, sapiente
+                        similique! Rem!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="alt-content section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="heading">Buttons</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 mb-3">
+                    <h3>Normal Buttons</h3>
+                    <a class="btn btn-default" href="#" role="button">.btn-default</a>
+                    <a class="btn btn-primary" href="#" role="button">.btn-primary</a>
+                    <a class="btn btn-secondary" href="#" role="button">.btn-secondary</a>
+                    <a class="btn btn-tertiary" href="#" role="button">.btn-tertiary</a>
+                    <a class="btn btn-success" href="#" role="button">.btn-success</a>
+                    <a class="btn btn-danger" href="#" role="button">.btn-danger</a>
+                    <a class="btn btn-warning" href="#" role="button">.btn-warning</a>
+                    <a class="btn btn-info" href="#" role="button">.btn-info</a>
+                    <a class="btn btn-light" href="#" role="button">.btn-light</a>
+                    <a class="btn btn-dark" href="#" role="button">.btn-dark</a>
+                    <hr />
+                </div>
+            </div><!-- /.row -->
+            <div class="row">
+                <div class="col-md-12 mb-3">
+                    <h3>Large Buttons</h3>
+                    <a class="btn btn-default btn-lg" href="#" role="button">.btn-default</a>
+                    <a class="btn btn-primary btn-lg" href="#" role="button">.btn-primary</a>
+                    <a class="btn btn-secondary btn-lg" href="#" role="button">.btn-secondary</a>
+                    <a class="btn btn-tertiary btn-lg" href="#" role="button">.btn-tertiary</a>
+                    <hr />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 mb-3">
+                    <h3>Small Buttons</h3>
+                    <a class="btn btn-default btn-sm" href="#" role="button">.btn-default</a>
+                    <a class="btn btn-primary btn-sm" href="#" role="button">.btn-primary</a>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">.btn-secondary</a>
+                    <a class="btn btn-tertiary btn-sm" href="#" role="button">.btn-tertiary</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="main-content pad-xl-vert">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <h2>.pad-xl-vert</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="alt-content pad-lg-vert">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <h2>.pad-lg-vert</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="primary-content pad-md-vert">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <h2>.pad-md-vert</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="secondary-content section">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <h2>.section</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="tertiary-content pad-sm-vert">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <h2>.pad-sm-vert</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="secondary-content pad-xs-vert">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <h2>.pad-xs-vert</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="main-content section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="heading">Main Content Test Area</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>Heading Three</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci cumque cupiditate eligendi
+                        error explicabo inventore iste laudantium magni modi nemo neque, nihil omnis optio perferendis
+                        reiciendis temporibus <a href="#">vel voluptatibus</a>?</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Heading Four</h4>
+                    <ul>
+                        <li>Some List Item</li>
+                        <li>Some List Item
+                            <ul>
+                                <li>Some Sub list Item</li>
+                            </ul>
+                        </li>
+                        <li>Some List Item</li>
+                    </ul>
+                    <hr/>
+                    <h4>Heading Four</h4>
+                    <ol>
+                        <li>Some List Item</li>
+                        <li>Some List Item
+                            <ol>
+                                <li>Some Sub list Item</li>
+                            </ol>
+                        </li>
+                        <li>Some List Item</li>
+                    </ol>
+                </div>
+                <div class="col-md-4">
+                    <div><strong>This is a sentence of some bolded text.</strong></div>
+                    <div class="mb-3"><em>This is a sentence of some italic text.</em></div>
+                    <hr>
+                    <a href="#">This</a> is a default text link.
+                    <hr>
+                    <blockquote>This is a block quote with some witty text.</blockquote>
+                    <hr>
+                    <a class="btn btn-default" href="#" role="button">.btn-default</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="alt-content section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="heading">Alt Content Test Area</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>Heading Three</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci cumque cupiditate eligendi
+                        error explicabo inventore iste laudantium magni modi nemo neque, nihil omnis optio perferendis
+                        reiciendis temporibus <a href="#">vel voluptatibus</a>?</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Heading Four</h4>
+                    <ul>
+                        <li>Some List Item</li>
+                        <li>Some List Item
+                            <ul>
+                                <li>Some Sub list Item</li>
+                            </ul>
+                        </li>
+                        <li>Some List Item</li>
+                    </ul>
+                    <hr/>
+                    <h4>Heading Four</h4>
+                    <ol>
+                        <li>Some List Item</li>
+                        <li>Some List Item
+                            <ol>
+                                <li>Some Sub list Item</li>
+                            </ol>
+                        </li>
+                        <li>Some List Item</li>
+                    </ol>
+                </div>
+                <div class="col-md-4">
+                    <div><strong>This is a sentence of some bolded text.</strong></div>
+                    <div class="mb-3"><em>This is a sentence of some italic text.</em></div>
+                    <hr>
+                    <a href="#">This</a> is a default text link.
+                    <hr>
+                    <blockquote>This is a block quote with some witty text.</blockquote>
+                    <hr>
+                    <a class="btn btn-default" href="#" role="button">.btn-default</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="primary-content section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="heading">Primary Content Test Area</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>Heading Three</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci cumque cupiditate eligendi
+                        error explicabo inventore iste laudantium magni modi nemo neque, nihil omnis optio perferendis
+                        reiciendis temporibus <a href="#">vel voluptatibus</a>?</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Heading Four</h4>
+                    <ul>
+                        <li>Some List Item</li>
+                        <li>Some List Item
+                            <ul>
+                                <li>Some Sub list Item</li>
+                            </ul>
+                        </li>
+                        <li>Some List Item</li>
+                    </ul>
+                    <hr/>
+                    <h4>Heading Four</h4>
+                    <ol>
+                        <li>Some List Item</li>
+                        <li>Some List Item
+                            <ol>
+                                <li>Some Sub list Item</li>
+                            </ol>
+                        </li>
+                        <li>Some List Item</li>
+                    </ol>
+                </div>
+                <div class="col-md-4">
+                    <div><strong>This is a sentence of some bolded text.</strong></div>
+                    <div class="mb-3"><em>This is a sentence of some italic text.</em></div>
+                    <hr>
+                    <a href="#">This</a> is a default text link.
+                    <hr>
+                    <blockquote>This is a block quote with some witty text.</blockquote>
+                    <hr>
+                    <a class="btn btn-default" href="#" role="button">.btn-default</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="secondary-content section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="heading">Secondary Content Test Area</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>Heading Three</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci cumque cupiditate eligendi
+                        error explicabo inventore iste laudantium magni modi nemo neque, nihil omnis optio perferendis
+                        reiciendis temporibus <a href="#">vel voluptatibus</a>?</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Heading Four</h4>
+                    <ul>
+                        <li>Some List Item</li>
+                        <li>Some List Item
+                            <ul>
+                                <li>Some Sub list Item</li>
+                            </ul>
+                        </li>
+                        <li>Some List Item</li>
+                    </ul>
+                    <hr/>
+                    <h4>Heading Four</h4>
+                    <ol>
+                        <li>Some List Item</li>
+                        <li>Some List Item
+                            <ol>
+                                <li>Some Sub list Item</li>
+                            </ol>
+                        </li>
+                        <li>Some List Item</li>
+                    </ol>
+                </div>
+                <div class="col-md-4">
+                    <div><strong>This is a sentence of some bolded text.</strong></div>
+                    <div class="mb-3"><em>This is a sentence of some italic text.</em></div>
+                    <hr>
+                    <a href="#">This</a> is a default text link.
+                    <hr>
+                    <blockquote>This is a block quote with some witty text.</blockquote>
+                    <hr>
+                    <a class="btn btn-default" href="#" role="button">.btn-default</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="tertiary-content section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="heading">Tertiary Content Test Area</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>Heading Three</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci cumque cupiditate eligendi
+                        error explicabo inventore iste laudantium magni modi nemo neque, nihil omnis optio perferendis
+                        reiciendis temporibus <a href="#">vel voluptatibus</a>?</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Heading Four</h4>
+                    <ul>
+                        <li>Some List Item</li>
+                        <li>Some List Item
+                            <ul>
+                                <li>Some Sub list Item</li>
+                            </ul>
+                        </li>
+                        <li>Some List Item</li>
+                    </ul>
+                    <hr/>
+                    <h4>Heading Four</h4>
+                    <ol>
+                        <li>Some List Item</li>
+                        <li>Some List Item
+                            <ol>
+                                <li>Some Sub list Item</li>
+                            </ol>
+                        </li>
+                        <li>Some List Item</li>
+                    </ol>
+                </div>
+                <div class="col-md-4">
+                    <div><strong>This is a sentence of some bolded text.</strong></div>
+                    <div class="mb-3"><em>This is a sentence of some italic text.</em></div>
+                    <hr>
+                    <a href="#">This</a> is a default text link.
+                    <hr>
+                    <blockquote>This is a block quote with some witty text.</blockquote>
+                    <hr>
+                    <a class="btn btn-default" href="#" role="button">.btn-default</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section style="background-image: url( /img/image1.jpg );" class="bg-image-dark-overlay section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="heading">Dark Image Background Test Area</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>Heading Three</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci cumque cupiditate eligendi
+                        error explicabo inventore iste laudantium magni modi nemo neque, nihil omnis optio perferendis
+                        reiciendis temporibus <a href="#">vel voluptatibus</a>?</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Heading Four</h4>
+                    <ul>
+                        <li>Some List Item</li>
+                        <li>Some List Item
+                            <ul>
+                                <li>Some Sub list Item</li>
+                            </ul>
+                        </li>
+                        <li>Some List Item</li>
+                    </ul>
+                    <hr/>
+                    <h4>Heading Four</h4>
+                    <ol>
+                        <li>Some List Item</li>
+                        <li>Some List Item
+                            <ol>
+                                <li>Some Sub list Item</li>
+                            </ol>
+                        </li>
+                        <li>Some List Item</li>
+                    </ol>
+                </div>
+                <div class="col-md-4">
+                    <div><strong>This is a sentence of some bolded text.</strong></div>
+                    <div class="mb-3"><em>This is a sentence of some italic text.</em></div>
+                    <hr>
+                    <a href="#">This</a> is a default text link.
+                    <hr>
+                    <blockquote>This is a block quote with some witty text.</blockquote>
+                    <hr>
+                    <a class="btn btn-default" href="#" role="button">.btn-default</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section style="background-image: url( /img/image2.jpg );" class="bg-image-light-overlay section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="heading">Light Image Background Test Area</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>Heading Three</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci cumque cupiditate eligendi
+                        error explicabo inventore iste laudantium magni modi nemo neque, nihil omnis optio perferendis
+                        reiciendis temporibus <a href="#">vel voluptatibus</a>?</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Heading Four</h4>
+                    <ul>
+                        <li>Some List Item</li>
+                        <li>Some List Item
+                            <ul>
+                                <li>Some Sub list Item</li>
+                            </ul>
+                        </li>
+                        <li>Some List Item</li>
+                    </ul>
+                    <hr/>
+                    <h4>Heading Four</h4>
+                    <ol>
+                        <li>Some List Item</li>
+                        <li>Some List Item
+                            <ol>
+                                <li>Some Sub list Item</li>
+                            </ol>
+                        </li>
+                        <li>Some List Item</li>
+                    </ol>
+                </div>
+                <div class="col-md-4">
+                    <div><strong>This is a sentence of some bolded text.</strong></div>
+                    <div class="mb-3"><em>This is a sentence of some italic text.</em></div>
+                    <hr>
+                    <a href="#">This</a> is a default text link.
+                    <hr>
+                    <blockquote>This is a block quote with some witty text.</blockquote>
+                    <hr>
+                    <a class="btn btn-default" href="#" role="button">.btn-default</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="alt-content section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="heading">Form Test Area</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Contact Us</h3>
+                    {#{{ craft.amForms.displayForm('contactUs') }}#}
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

@@ -1,0 +1,299 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1 0 auto;
+}
+
+.section {
+  padding: 3rem 0;
+}
+
+.pad-none-vert {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.pad-xl-vert {
+  @extend .pt-5;
+  @extend .pb-5;
+}
+
+.pad-lg-vert {
+  @extend .pt-4;
+  @extend .pb-4;
+}
+
+.pad-md-vert {
+  @extend .pt-3;
+  @extend .pb-3;
+}
+
+.pad-sm-vert {
+  @extend .pt-2;
+  @extend .pb-2;
+}
+
+.pad-xs-vert {
+  @extend .pt-1;
+  @extend .pb-1;
+}
+
+.btn {
+
+  &:hover {
+
+  }
+  i, span.b-icon {
+
+  }
+  &.btn-default {
+
+    &:hover, &:focus {
+
+      &:before {
+
+      }
+      &:after {
+      }
+    }
+  }
+}
+
+.heading-wrap {
+  background-color: $primary;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  color: $white;
+  text-align: center;
+}
+
+.primary-content {
+  background-color: $primary;
+  color: $white;
+  h1, h2, h3, h4, h5, h6 {
+    color: $white;
+  }
+  a {
+    color: $secondary;
+    &:hover {
+      color: scale-color($secondary, $lightness: -15%);
+    }
+  }
+  blockquote {
+    border-color: $secondary;
+  }
+  .btn-default {
+    background-color: $tertiary;
+    color: $white;
+    border: 1px solid $white;
+    box-shadow: 0 0 0 3px $tertiary;
+    &:hover {
+      color: $white;
+      background-color: scale-color($tertiary, $lightness: -15%);
+      box-shadow: 0 0 0 3px scale-color($tertiary, $lightness: -15%);
+    }
+  }
+  .heading {
+    &:before, &:after {
+      background-color: $white;
+    }
+  }
+}
+
+.secondary-content {
+  background-color: $secondary;
+  color: $white;
+  h1, h2, h3, h4, h5, h6 {
+    color: $white;
+  }
+  a {
+    color: $primary;
+    &:hover {
+      color: scale-color($primary, $lightness: -15%);
+    }
+  }
+  blockquote {
+    border-color: $primary;
+  }
+  .btn-default {
+    background-color: $primary;
+    color: $white;
+    border: 1px solid $white;
+    box-shadow: 0 0 0 3px $primary;
+    &:hover {
+      color: $white;
+      background-color: scale-color($primary, $lightness: -15%);
+      box-shadow: 0 0 0 3px scale-color($primary, $lightness: -15%);
+    }
+  }
+  .btn-primary,
+  .btn-secondary,
+  .btn-tertiary {
+    color: $white;
+    &:hover {
+      color: $white;
+    }
+  }
+  .heading {
+    &:before, &:after {
+      background-color: $white;
+    }
+  }
+}
+
+.tertiary-content {
+  background-color: $tertiary;
+  color: $white;
+  h1, h2, h3, h4, h5, h6 {
+    color: $white;
+  }
+  a {
+    color: $secondary;
+    &:hover {
+      color: scale-color($white, $lightness: -15%);
+    }
+  }
+  blockquote {
+    border-color: $secondary;
+  }
+  .btn-default {
+    background-color: $secondary;
+    color: $white;
+    border: 1px solid $white;
+    box-shadow: 0 0 0 3px $secondary;
+    &:hover {
+      color: $white;
+      background-color: scale-color($secondary, $lightness: -15%);
+      box-shadow: 0 0 0 3px scale-color($secondary, $lightness: -15%);
+    }
+  }
+  .btn-primary,
+  .btn-secondary,
+  .btn-tertiary {
+    color: $white;
+  }
+  .heading {
+    &:before, &:after {
+      background-color: $white;
+    }
+  }
+}
+
+.main-content {
+  background-color: $white;
+  h1, h2, h3, h4, h5, h6 {
+    color: $primary;
+  }
+}
+
+.alt-content {
+  background-color: $quaternary;
+  h1, h2, h3, h4, h5, h6 {
+    color: $primary;
+  }
+}
+
+.contact-info {
+  list-style-type: none;
+  margin-left: 0;
+}
+
+.bg-image-dark-overlay {
+  z-index: 2;
+  position: relative;
+  background-size: cover;
+  background-position: center center;
+  color: $white;
+  &::before {
+    z-index: -1;
+    position: absolute;
+    background: fade-out($black, 0.5);
+    content: '';
+    height: 100%;
+    width: 100%;
+    display: block;
+    left: 0;
+    top: 0;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    color: $quaternary;
+  }
+  a {
+    color: $quaternary;
+    &:hover {
+      color: scale-color($quaternary, $lightness: -15%);
+    }
+  }
+  blockquote {
+    border-color: $quaternary;
+  }
+  .btn-default {
+    background-color: $tertiary;
+    color: $white;
+    border: 1px solid $white;
+    box-shadow: 0 0 0 3px $tertiary;
+    &:hover {
+      color: $white;
+      background-color: scale-color($tertiary, $lightness: -15%);
+      box-shadow: 0 0 0 3px scale-color($tertiary, $lightness: -15%);
+    }
+  }
+  .heading {
+    &:before, &:after {
+      background-color: $quaternary;
+    }
+  }
+}
+
+.bg-image-light-overlay {
+  z-index: 2;
+  position: relative;
+  background-size: cover;
+  background-position: center center;
+  &::before {
+    z-index: -1;
+    position: absolute;
+    background: fade-out($white, 0.4);
+    content: '';
+    height: 100%;
+    width: 100%;
+    display: block;
+    left: 0;
+    top: 0;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    color: $primary;
+  }
+  a {
+    color: $primary;
+    &:hover {
+      color: scale-color($primary, $lightness: -15%);
+    }
+  }
+  blockquote {
+    border-color: $primary;
+  }
+  .btn-default {
+    background-color: $primary;
+    color: $white;
+    border: 1px solid $white;
+    box-shadow: 0 0 0 3px $primary;
+    &:hover {
+      color: $white;
+      background-color: scale-color($primary, $lightness: -15%);
+      box-shadow: 0 0 0 3px scale-color($primary, $lightness: -15%);
+    }
+  }
+  .heading {
+    &:before, &:after {
+      background-color: $primary;
+    }
+  }
+}

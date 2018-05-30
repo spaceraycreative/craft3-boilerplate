@@ -1,0 +1,32 @@
+// Forms
+
+.form-group {
+  input {
+    @extend .form-control;
+  }
+  textarea {
+    @extend .form-control;
+  }
+  select {
+    @extend .form-control;
+  }
+}
+
+.form {
+  .button {
+    font-weight: bold;
+    font-size: 1rem;
+  }
+}
+
+.form__label {
+  display: none;
+}
+
+.form__note {
+  display: none;
+}
+
+textarea {
+  resize: vertical;
+}

@@ -1,0 +1,13 @@
+<div class="row justify-content-center mb-5">
+    <div class="col-md-9">
+        {% set video = craft.embedder.url(block.videoUrl, {youtube_rel:'0'}) %}
+
+        {% if video %}
+            <div class="embed-responsive embed-responsive-16by9">
+                {{ video.embed_code }}
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+

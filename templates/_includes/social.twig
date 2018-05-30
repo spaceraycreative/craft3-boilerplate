@@ -1,0 +1,32 @@
+{% cache %}
+    <ul class="social">
+        {% if socialMedia.facebookUrl is not empty %}
+            <li>
+                <a href="{{ socialMedia.facebookUrl }}" target="_blank">
+                    <i class="fa fa-fw fa-facebook"></i>
+                </a>
+            </li>
+        {% endif %}
+        {% if socialMedia.twitterUrl is not empty %}
+            <li>
+                <a href="{{ socialMedia.twitterUrl }}" target="_blank">
+                    <i class="fa fa-fw fa-twitter "></i>
+                </a>
+            </li>
+        {% endif %}
+        {% if socialMedia.instagramUrl is not empty %}
+            <li>
+                <a href="{{ socialMedia.instagramUrl }}" target="_blank">
+                    <i class="fa fa-fw fa-instagram "></i>
+                </a>
+            </li>
+        {% endif %}
+        {% if socialMedia.linkedinUrl is not empty %}
+            <li>
+                <a href="{{ socialMedia.linkedinUrl }}" target="_blank">
+                    <i class="fa fa-fw fa-linkedin "></i>
+                </a>
+            </li>
+        {% endif %}
+    </ul>
+{% endcache %}

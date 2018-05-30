@@ -1,0 +1,52 @@
+{% extends "_layout" %}
+{% block _inline_css %}
+    <style>
+        {{ source (_self.getTemplateName() ~ '_critical.min.css', ignore_missing = true) }}
+    </style>
+{% endblock %}
+
+{% block content %}
+    {% include "_includes/heading-wrap.twig" %}
+
+    <section class="main-content section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    {{ contact.address|nl2br }}
+                </div>
+                <div class="col-md-6">
+                    {% if contact.map is not empty %}
+                        <div id="map" style="height: 400px;"></div>
+                        <script>
+                            var map;
+
+                            function initMap() {
+                                // Display the map
+                                map = new google.maps.Map(document.getElementById("map"), {
+                                    center: {
+                                        lat: {{ contact.map.lat }},
+                                        lng: {{ contact.map.lng }}
+                                    },
+                                    zoom: {{ contact.map.zoom }}
+                                });
+
+                                // Display the marker
+                                var marker = new google.maps.Marker({
+                                    position: {
+                                        lat: {{ contact.map.lat }},
+                                        lng: {{ contact.map.lng }}
+                                    },
+                                    // A custom icon can be defined here, if desired
+                                    // icon: '/path/to/custom/icon.png',
+                                    map: map
+                                });
+                            }
+                        </script>
+                        <script src="https://maps.googleapis.com/maps/api/js?key={{ craft.simpleMap.apiKey }}&callback=initMap"
+                                async defer></script>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

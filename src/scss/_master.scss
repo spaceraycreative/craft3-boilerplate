@@ -1,0 +1,59 @@
+// Master
+
+.hero-content {
+  background-color: $primary;
+  color: $white;
+  z-index: 2;
+  position: relative;
+  background-size: cover;
+  background-position: center center;
+  //text-shadow: 2px 2px $gray-900;
+  padding: 6rem 0;
+  &::before {
+    z-index: -1;
+    position: absolute;
+    background: fade-out($secondary, 0.4);
+    content: '';
+    height: 100%;
+    width: 100%;
+    display: block;
+    left: 0;
+    top: 0;
+  }
+  h1 {
+    color: $white;
+  }
+  .subhead {
+    @extend h3;
+    color: $white;
+    margin-bottom: 0;
+    font-weight: normal;
+  }
+}
+
+.heading-content {
+  background-color: $primary;
+  color: $white;
+  h1 {
+    font-weight: bold;
+  }
+  .subhead {
+    @extend h2;
+    font-weight: normal;
+  }
+}
+
+@include media-breakpoint-only(xs) {
+}
+
+@include media-breakpoint-only(sm) {
+}
+
+@include media-breakpoint-only(md) {
+}
+
+@include media-breakpoint-only(lg) {
+}
+
+@include media-breakpoint-only(xl) {
+}
