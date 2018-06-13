@@ -4,7 +4,7 @@
         {{ source (_self.getTemplateName() ~ '_critical.min.css', ignore_missing = true) }}
     </style>
 {% endblock %}
-{% set title = "Style GUide" %}
+{% set title = "Style Guide" %}
 {% block content %}
     {% include "_includes/heading-wrap.twig" %}
 
@@ -111,7 +111,7 @@
                     <a class="btn btn-info" href="#" role="button">.btn-info</a>
                     <a class="btn btn-light" href="#" role="button">.btn-light</a>
                     <a class="btn btn-dark" href="#" role="button">.btn-dark</a>
-                    <hr />
+                    <hr/>
                 </div>
             </div><!-- /.row -->
             <div class="row">
@@ -121,7 +121,7 @@
                     <a class="btn btn-primary btn-lg" href="#" role="button">.btn-primary</a>
                     <a class="btn btn-secondary btn-lg" href="#" role="button">.btn-secondary</a>
                     <a class="btn btn-tertiary btn-lg" href="#" role="button">.btn-tertiary</a>
-                    <hr />
+                    <hr/>
                 </div>
             </div>
             <div class="row">
@@ -547,9 +547,59 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-5">
                     <h3>Contact Us</h3>
-                    {#{{ craft.amForms.displayForm('contactUs') }}#}
+                    {% macro errorList(errors) %}
+                        {% if errors %}
+                            {% for error in errors %}
+                                *{{ error }}
+                            {% endfor %}
+                        {% endif %}
+                    {% endmacro %}
+
+                    {% from _self import errorList %}
+
+                    <form method="post" action="" accept-charset="UTF-8">
+                        {{ csrfInput() }}
+                        <input type="hidden" name="action" value="contact-form/send">
+                        {{ redirectInput('form-submitted') }}
+
+                        
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input id="name" type="text" name="fromName" class="form-control"
+                                   placeholder="" value="{{ message.fromName ?? '' }}">
+                            <small class="form-text">
+                                {{ message is defined and message ? errorList(message.getErrors('fromName')) }}
+                            </small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input id="phone" type="tel" name="message[Phone]" class="form-control" placeholder=""
+                                   value="">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input id="email" type="email" name="fromEmail" class="form-control"
+                                   placeholder="" value="{{ message.fromEmail ?? '' }}">
+                            <small class="form-text">
+                                {{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
+                            </small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea rows="4" id="message" type="email" name="message" class="form-control"
+                                      placeholder="">{{ message.message ?? '' }}</textarea>
+                            <small class="form-text">
+                                {{ message is defined and message ? errorList(message.getErrors('message')) }}
+                            </small>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
                 </div>
             </div>
         </div>

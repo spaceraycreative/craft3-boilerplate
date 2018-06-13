@@ -4,15 +4,15 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "c8db2de86d36b558537a4b282cfef325",
+    "content-hash": "da33a61c6a2663c77c170d300d0e75c6",
     "packages": [
         {
             "name": "aelvan/imager",
-            "version": "v2.0.1.1",
+            "version": "v2.0.1.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aelvan/Imager-Craft/zipball/17c6575576858025fae952d01bd7ffb10dd5e232",
-                "reference": "17c6575576858025fae952d01bd7ffb10dd5e232",
+                "url": "https://api.github.com/repos/aelvan/Imager-Craft/zipball/56c84bb0a7aabf2fc24abe70fe3ee82b3f86f39c",
+                "reference": "56c84bb0a7aabf2fc24abe70fe3ee82b3f86f39c",
                 "shasum": ""
             },
             "require": {
@@ -24,7 +24,7 @@
                 "kraken-io/kraken-php": "^1.2",
                 "ksubileau/color-thief-php": "^1.3.1",
                 "mikehaertl/php-shellcommand": "^1.2",
-                "tinify/tinify": "^1.5.2"
+                "tinify/tinify": ">=1.1.1"
             },
             "type": "craft-plugin",
             "extra": {
@@ -67,15 +67,64 @@
                 "docs": "https://github.com/aelvan/Imager-Craft/blob/craft3/README.md",
                 "issues": "https://github.com/aelvan/Imager-Craft/issues"
             },
-            "time": "2018-05-14T08:10:57+00:00"
+            "time": "2018-06-12T19:59:07+00:00"
+        },
+        {
+            "name": "albertcht/invisible-recaptcha",
+            "version": "v1.8.2",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/albertcht/invisible-recaptcha/zipball/bce2cebeb8d6c4ca5d1c4d8638f7bb0175ea102a",
+                "reference": "bce2cebeb8d6c4ca5d1c4d8638f7bb0175ea102a",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^6.2",
+                "illuminate/support": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*",
+                "php": "^5.6.4 || ^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "AlbertCht\\InvisibleReCaptcha\\InvisibleReCaptchaServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "AlbertCht\\InvisibleReCaptcha\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Albert Chen",
+                    "email": "albert.cht@gmail.com"
+                }
+            ],
+            "description": "Invisible reCAPTCHA For Laravel.",
+            "keywords": [
+                "captcha",
+                "invisible",
+                "invisible-recaptcha",
+                "laravel",
+                "laravel5",
+                "no-captcha",
+                "php",
+                "recaptcha"
+            ],
+            "time": "2018-02-12T01:45:33+00:00"
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.56.3",
+            "version": "3.61.4",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/20b60eafa13b8996d468558e86b14261de731e5f",
-                "reference": "20b60eafa13b8996d468558e86b14261de731e5f",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/2c1ec9b0f39549eeb0fb37166e5b28a8f4392f1b",
+                "reference": "2c1ec9b0f39549eeb0fb37166e5b28a8f4392f1b",
                 "shasum": ""
             },
             "require": {
@@ -130,7 +179,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2018-05-17T21:37:37+00:00"
+            "time": "2018-06-11T21:08:37+00:00"
         },
         {
             "name": "cebe/markdown",
@@ -425,11 +474,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.0.9",
+            "version": "3.0.11",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/c9798817ac3cb39e53df1d69ec2c2c495f562a02",
-                "reference": "c9798817ac3cb39e53df1d69ec2c2c495f562a02",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/8cb1ec0f12691683bcba7d94003065c7d7a2693c",
+                "reference": "8cb1ec0f12691683bcba7d94003065c7d7a2693c",
                 "shasum": ""
             },
             "require": {
@@ -499,7 +548,7 @@
                 "docs": "https://github.com/craftcms/docs",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2018-05-22T19:15:42+00:00"
+            "time": "2018-06-12T16:58:59+00:00"
         },
         {
             "name": "craftcms/contact-form",
@@ -879,6 +928,64 @@
             "time": "2015-04-22T14:55:55+00:00"
         },
         {
+            "name": "doctrine/inflector",
+            "version": "v1.2.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/inflector/zipball/e11d84c6e018beedd929cff5220969a3c6d1d462",
+                "reference": "e11d84c6e018beedd929cff5220969a3c6d1d462",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Doctrine\\Common\\Inflector\\": "lib/Doctrine/Common/Inflector"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Roman Borschel",
+                    "email": "roman@code-factory.org"
+                },
+                {
+                    "name": "Benjamin Eberlei",
+                    "email": "kontakt@beberlei.de"
+                },
+                {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com"
+                },
+                {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com"
+                },
+                {
+                    "name": "Johannes Schmitt",
+                    "email": "schmittjoh@gmail.com"
+                }
+            ],
+            "description": "Common String Manipulations with regard to casing and singular/plural rules.",
+            "homepage": "http://www.doctrine-project.org",
+            "keywords": [
+                "inflection",
+                "pluralize",
+                "singularize",
+                "string"
+            ],
+            "time": "2017-07-22T12:18:28+00:00"
+        },
+        {
             "name": "doctrine/lexer",
             "version": "v1.0.1",
             "dist": {
@@ -1233,16 +1340,15 @@
         },
         {
             "name": "google/cloud",
-            "version": "v0.65.0",
+            "version": "v0.68.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GoogleCloudPlatform/google-cloud-php/zipball/12b2203fff7f37888a75be1de796a4ea22fe123e",
-                "reference": "12b2203fff7f37888a75be1de796a4ea22fe123e",
+                "url": "https://api.github.com/repos/GoogleCloudPlatform/google-cloud-php/zipball/a4e7e52158a2f08b52df76bf0ea15b84ba1ac11a",
+                "reference": "a4e7e52158a2f08b52df76bf0ea15b84ba1ac11a",
                 "shasum": ""
             },
             "require": {
-                "google/gax": "^0.31.1",
-                "google/proto-client": "^0.38.0",
+                "google/gax": "^0.34",
                 "guzzlehttp/guzzle": "^5.3|^6.0",
                 "guzzlehttp/psr7": "^1.2",
                 "monolog/monolog": "~1",
@@ -1252,32 +1358,32 @@
                 "rize/uri-template": "~0.3"
             },
             "replace": {
-                "google/cloud-bigquery": "1.2.1",
-                "google/cloud-bigquerydatatransfer": "0.4.1",
-                "google/cloud-bigtable": "0.3.4",
-                "google/cloud-container": "0.3.4",
-                "google/cloud-core": "1.20.2",
-                "google/cloud-dataproc": "0.3.4",
-                "google/cloud-datastore": "1.5.2",
-                "google/cloud-debugger": "0.8.0",
-                "google/cloud-dialogflow": "0.1.1",
-                "google/cloud-dlp": "0.8.1",
-                "google/cloud-error-reporting": "0.9.5",
-                "google/cloud-firestore": "0.9.1",
-                "google/cloud-iot": "0.1.3",
-                "google/cloud-language": "0.13.4",
-                "google/cloud-logging": "1.10.5",
-                "google/cloud-monitoring": "0.9.4",
-                "google/cloud-oslogin": "0.3.4",
-                "google/cloud-pubsub": "1.1.4",
-                "google/cloud-redis": "0.1.1",
-                "google/cloud-spanner": "1.4.1",
-                "google/cloud-speech": "0.13.1",
-                "google/cloud-storage": "1.5.0",
-                "google/cloud-trace": "0.7.4",
-                "google/cloud-translate": "1.2.0",
-                "google/cloud-videointelligence": "0.10.4",
-                "google/cloud-vision": "0.11.4"
+                "google/cloud-bigquery": "1.2.3",
+                "google/cloud-bigquerydatatransfer": "0.6.0",
+                "google/cloud-bigtable": "0.5.0",
+                "google/cloud-container": "0.5.0",
+                "google/cloud-core": "1.20.5",
+                "google/cloud-dataproc": "0.5.0",
+                "google/cloud-datastore": "1.5.4",
+                "google/cloud-debugger": "0.11.0",
+                "google/cloud-dialogflow": "0.3.0",
+                "google/cloud-dlp": "0.10.0",
+                "google/cloud-error-reporting": "0.11.0",
+                "google/cloud-firestore": "0.11.0",
+                "google/cloud-iot": "0.3.0",
+                "google/cloud-language": "0.15.0",
+                "google/cloud-logging": "1.12.0",
+                "google/cloud-monitoring": "0.11.0",
+                "google/cloud-oslogin": "0.5.0",
+                "google/cloud-pubsub": "1.3.0",
+                "google/cloud-redis": "0.3.0",
+                "google/cloud-spanner": "1.6.0",
+                "google/cloud-speech": "0.15.0",
+                "google/cloud-storage": "1.5.2",
+                "google/cloud-trace": "0.10.0",
+                "google/cloud-translate": "1.2.2",
+                "google/cloud-videointelligence": "0.12.0",
+                "google/cloud-vision": "0.14.0"
             },
             "suggest": {
                 "opis/closure": "May be used to serialize closures to process jobs in the batch daemon. Please require version ^3.",
@@ -1327,7 +1433,28 @@
                     "Google\\Cloud\\Trace\\": "Trace/src",
                     "Google\\Cloud\\Translate\\": "Translate/src",
                     "Google\\Cloud\\VideoIntelligence\\": "VideoIntelligence/src",
-                    "Google\\Cloud\\Vision\\": "Vision/src"
+                    "Google\\Cloud\\Vision\\": "Vision/src",
+                    "GPBMetadata\\Google\\Bigtable\\": "Bigtable/metadata",
+                    "GPBMetadata\\Google\\Container\\": "Container/metadata",
+                    "GPBMetadata\\Google\\Cloud\\Bigquery\\Datatransfer\\": "BigQueryDataTransfer/metadata",
+                    "GPBMetadata\\Google\\Cloud\\Dataproc\\": "Dataproc/metadata",
+                    "GPBMetadata\\Google\\Cloud\\Dialogflow\\": "Dialogflow/metadata",
+                    "GPBMetadata\\Google\\Cloud\\Iot\\": "Iot/metadata",
+                    "GPBMetadata\\Google\\Cloud\\Language\\": "Language/metadata",
+                    "GPBMetadata\\Google\\Cloud\\Oslogin\\": "OsLogin/metadata",
+                    "GPBMetadata\\Google\\Cloud\\Redis\\": "Redis/metadata",
+                    "GPBMetadata\\Google\\Cloud\\Speech\\": "Speech/metadata",
+                    "GPBMetadata\\Google\\Cloud\\Videointelligence\\": "VideoIntelligence/metadata",
+                    "GPBMetadata\\Google\\Cloud\\Vision\\": "Vision/metadata",
+                    "GPBMetadata\\Google\\Devtools\\Clouddebugger\\": "Debugger/metadata",
+                    "GPBMetadata\\Google\\Devtools\\Clouderrorreporting\\": "ErrorReporting/metadata",
+                    "GPBMetadata\\Google\\Devtools\\Cloudtrace\\": "Trace/metadata",
+                    "GPBMetadata\\Google\\Firestore\\": "Firestore/metadata",
+                    "GPBMetadata\\Google\\Logging\\": "Logging/metadata",
+                    "GPBMetadata\\Google\\Monitoring\\": "Monitoring/metadata",
+                    "GPBMetadata\\Google\\Privacy\\Dlp\\": "Dlp/metadata",
+                    "GPBMetadata\\Google\\Pubsub\\": "PubSub/metadata",
+                    "GPBMetadata\\Google\\Spanner\\": "Spanner/metadata"
                 }
             },
             "license": [
@@ -1371,15 +1498,15 @@
                 "translation",
                 "vision"
             ],
-            "time": "2018-05-17T16:38:58+00:00"
+            "time": "2018-06-12T16:51:43+00:00"
         },
         {
             "name": "google/gax",
-            "version": "0.31.3",
+            "version": "0.34.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/gax-php/zipball/cae100c34c518e150db4adb6a1cfa6d5335d63f9",
-                "reference": "cae100c34c518e150db4adb6a1cfa6d5335d63f9",
+                "url": "https://api.github.com/repos/googleapis/gax-php/zipball/faddb0bd14e63b2470fd71d5a66cf6a1416c6717",
+                "reference": "faddb0bd14e63b2470fd71d5a66cf6a1416c6717",
                 "shasum": ""
             },
             "require": {
@@ -1412,45 +1539,15 @@
             "keywords": [
                 "google"
             ],
-            "time": "2018-04-17T15:26:29+00:00"
-        },
-        {
-            "name": "google/proto-client",
-            "version": "0.38.0",
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/proto-client-php/zipball/45c3ea33f016fa96735bd65455798579c3180889",
-                "reference": "45c3ea33f016fa96735bd65455798579c3180889",
-                "shasum": ""
-            },
-            "require": {
-                "google/protobuf": "^3.4",
-                "php": ">=5.5"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Google\\": "src/Google/",
-                    "GPBMetadata\\": "src/GPBMetadata/"
-                }
-            },
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "description": "Generated proto and gRPC classes for Google Cloud Platform in PHP",
-            "homepage": "https://github.com/googleapis/proto-client-php",
-            "keywords": [
-                "google"
-            ],
-            "time": "2018-05-07T20:03:13+00:00"
+            "time": "2018-06-08T22:24:35+00:00"
         },
         {
             "name": "google/protobuf",
-            "version": "v3.5.2",
+            "version": "v3.6.0.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/google/protobuf/zipball/b5fbb742af122b565925987e65c08957739976a7",
-                "reference": "b5fbb742af122b565925987e65c08957739976a7",
+                "url": "https://api.github.com/repos/google/protobuf/zipball/ce044817c7ba0aea27c3fd8e496635d94d20a755",
+                "reference": "ce044817c7ba0aea27c3fd8e496635d94d20a755",
                 "shasum": ""
             },
             "require": {
@@ -1474,7 +1571,7 @@
             "keywords": [
                 "proto"
             ],
-            "time": "2018-03-06T03:54:18+00:00"
+            "time": "2018-06-08T01:16:44+00:00"
         },
         {
             "name": "grpc/grpc",
@@ -1673,6 +1770,95 @@
                 "url"
             ],
             "time": "2017-03-20T17:10:46+00:00"
+        },
+        {
+            "name": "illuminate/contracts",
+            "version": "v5.5.40",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/illuminate/contracts/zipball/04fbae936ed14e673dddd18a39662f49e7d199f5",
+                "reference": "04fbae936ed14e673dddd18a39662f49e7d199f5",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0",
+                "psr/container": "~1.0",
+                "psr/simple-cache": "~1.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.5-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Illuminate\\Contracts\\": ""
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                }
+            ],
+            "description": "The Illuminate Contracts package.",
+            "homepage": "https://laravel.com",
+            "time": "2018-03-20T15:34:35+00:00"
+        },
+        {
+            "name": "illuminate/support",
+            "version": "v5.5.40",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/5d2ccb17e526ad537bffc16abc1d516457ae5587",
+                "reference": "5d2ccb17e526ad537bffc16abc1d516457ae5587",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/inflector": "~1.1",
+                "ext-mbstring": "*",
+                "illuminate/contracts": "5.5.*",
+                "nesbot/carbon": "^1.24.1",
+                "php": ">=7.0"
+            },
+            "replace": {
+                "tightenco/collect": "<5.5.33"
+            },
+            "suggest": {
+                "illuminate/filesystem": "Required to use the composer class (5.5.*).",
+                "symfony/process": "Required to use the composer class (~3.3).",
+                "symfony/var-dumper": "Required to use the dd function (~3.3)."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.5-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Illuminate\\Support\\": ""
+                },
+                "files": [
+                    "helpers.php"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                }
+            ],
+            "description": "The Illuminate Support package.",
+            "homepage": "https://laravel.com",
+            "time": "2018-03-10T15:44:32+00:00"
         },
         {
             "name": "imageoptim/imageoptim",
@@ -2343,12 +2529,50 @@
             "time": "2018-05-10T10:36:45+00:00"
         },
         {
-            "name": "nystudio107/craft-seomatic",
-            "version": "3.0.18",
+            "name": "nesbot/carbon",
+            "version": "1.29.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/276b37eb18bc1bf1702bf1b0f57795215e2e0273",
-                "reference": "276b37eb18bc1bf1702bf1b0f57795215e2e0273",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/ed6aa898982f441ccc9b2acdec51490f2bc5d337",
+                "reference": "ed6aa898982f441ccc9b2acdec51490f2bc5d337",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.9",
+                "symfony/translation": "~2.6 || ~3.0 || ~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Brian Nesbitt",
+                    "email": "brian@nesbot.com",
+                    "homepage": "http://nesbot.com"
+                }
+            ],
+            "description": "A simple API extension for DateTime.",
+            "homepage": "http://carbon.nesbot.com",
+            "keywords": [
+                "date",
+                "datetime",
+                "time"
+            ],
+            "time": "2018-05-29T15:23:46+00:00"
+        },
+        {
+            "name": "nystudio107/craft-seomatic",
+            "version": "3.0.22",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/adc6eef9653c583b01176166ec8d42cb0d9953a0",
+                "reference": "adc6eef9653c583b01176166ec8d42cb0d9953a0",
                 "shasum": ""
             },
             "require": {
@@ -2413,7 +2637,7 @@
                 "docs": "https://github.com/nystudio107/craft-seomatic/blob/v3/README.md",
                 "issues": "https://github.com/nystudio107/craft-seomatic/issues"
             },
-            "time": "2018-05-21T03:11:50+00:00"
+            "time": "2018-06-12T23:30:53+00:00"
         },
         {
             "name": "nystudio107/craft-typogrify",
@@ -2472,18 +2696,15 @@
         },
         {
             "name": "paragonie/random_compat",
-            "version": "v2.0.12",
+            "version": "v2.0.15",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/258c89a6b97de7dfaf5b8c7607d0478e236b04fb",
-                "reference": "258c89a6b97de7dfaf5b8c7607d0478e236b04fb",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/10bcb46e8f3d365170f6de9d05245aa066b81f09",
+                "reference": "10bcb46e8f3d365170f6de9d05245aa066b81f09",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.2.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "4.*|5.*"
             },
             "suggest": {
                 "ext-libsodium": "Provides a modern crypto API that can be used to generate random bytes."
@@ -2494,7 +2715,6 @@
                     "lib/random.php"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2508,10 +2728,11 @@
             "description": "PHP 5.x polyfill for random_bytes() and random_int() from PHP 7",
             "keywords": [
                 "csprng",
+                "polyfill",
                 "pseudorandom",
                 "random"
             ],
-            "time": "2018-04-04T21:24:14+00:00"
+            "time": "2018-06-08T15:26:40+00:00"
         },
         {
             "name": "php-science/textrank",
@@ -2649,6 +2870,49 @@
             "time": "2016-08-06T20:24:11+00:00"
         },
         {
+            "name": "psr/container",
+            "version": "1.0.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/container/zipball/b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
+                "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Container\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common Container Interface (PHP FIG PSR-11)",
+            "homepage": "https://github.com/php-fig/container",
+            "keywords": [
+                "PSR-11",
+                "container",
+                "container-interface",
+                "container-interop",
+                "psr"
+            ],
+            "time": "2017-02-14T16:28:37+00:00"
+        },
+        {
             "name": "psr/http-message",
             "version": "1.0.1",
             "dist": {
@@ -2736,6 +3000,48 @@
             "time": "2016-10-10T12:19:37+00:00"
         },
         {
+            "name": "psr/simple-cache",
+            "version": "1.0.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/simple-cache/zipball/408d5eafb83c57f6365a3ca330ff23aa4a5fa39b",
+                "reference": "408d5eafb83c57f6365a3ca330ff23aa4a5fa39b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\SimpleCache\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interfaces for simple caching",
+            "keywords": [
+                "cache",
+                "caching",
+                "psr",
+                "psr-16",
+                "simple-cache"
+            ],
+            "time": "2017-10-23T01:57:42+00:00"
+        },
+        {
             "name": "ramsey/uuid",
             "version": "3.7.3",
             "dist": {
@@ -2799,14 +3105,15 @@
         },
         {
             "name": "rias/craft-contact-form-extensions",
-            "version": "1.0.4",
+            "version": "1.0.6",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Rias500/craft-contact-form-extensions/zipball/f6be53a594426f2eeca8709d6174c328af616ea4",
-                "reference": "f6be53a594426f2eeca8709d6174c328af616ea4",
+                "url": "https://api.github.com/repos/Rias500/craft-contact-form-extensions/zipball/b109829fe221029686c66ed2d2aca1fb62114353",
+                "reference": "b109829fe221029686c66ed2d2aca1fb62114353",
                 "shasum": ""
             },
             "require": {
+                "albertcht/invisible-recaptcha": "^1.8",
                 "craftcms/cms": "^3.0.0-RC1",
                 "craftcms/contact-form": "^2.1"
             },
@@ -2849,7 +3156,7 @@
                 "docs": "https://github.com/Rias500/craft-contact-form-extensions/blob/master/README.md",
                 "issues": "https://github.com/Rias500/craft-contact-form-extensions/issues"
             },
-            "time": "2018-05-22T07:15:35+00:00"
+            "time": "2018-06-07T07:55:34+00:00"
         },
         {
             "name": "rize/uri-template",
@@ -3404,6 +3711,59 @@
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
             "time": "2017-07-13T13:05:09+00:00"
+        },
+        {
+            "name": "symfony/translation",
+            "version": "v3.3.6",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/translation/zipball/35dd5fb003c90e8bd4d8cabdf94bf9c96d06fdc3",
+                "reference": "35dd5fb003c90e8bd4d8cabdf94bf9c96d06fdc3",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9",
+                "symfony/polyfill-mbstring": "~1.0"
+            },
+            "conflict": {
+                "symfony/config": "<2.8",
+                "symfony/yaml": "<3.3"
+            },
+            "suggest": {
+                "psr/log": "To use logging capability in translator",
+                "symfony/config": "",
+                "symfony/yaml": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Translation\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Translation Component",
+            "homepage": "https://symfony.com",
+            "time": "2017-06-24T16:45:30+00:00"
         },
         {
             "name": "tinify/tinify",
