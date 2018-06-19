@@ -19,11 +19,11 @@
     "rss": "https://craftcms.com/changelog.rss"
   },
   "require": {
-    "craftcms/cms": "3.0.11",
+    "craftcms/cms": "3.0.12",
     "vlucas/phpdotenv": "^2.4.0",
-    "nystudio107/craft-seomatic": "3.0.22",
+    "nystudio107/craft-seomatic": "3.0.23",
     "aelvan/imager": "v2.0.1.2",
-    "nystudio107/craft-typogrify": "1.1.10",
+    "nystudio107/craft-typogrify": "1.1.11",
     "craftcms/redactor": "2.1.0",
     "verbb/field-manager": "2.0.2",
     "mikestecker/craft-videoembedder": "1.0.9",

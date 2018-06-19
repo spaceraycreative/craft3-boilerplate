@@ -564,7 +564,7 @@
                         <input type="hidden" name="action" value="contact-form/send">
                         {{ redirectInput('form-submitted') }}
 
-                        
+
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input id="name" type="text" name="fromName" class="form-control"
@@ -575,18 +575,18 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="phone">Phone</label>
-                            <input id="phone" type="tel" name="message[Phone]" class="form-control" placeholder=""
-                                   value="">
-                        </div>
-
-                        <div class="form-group">
                             <label for="email">Email</label>
                             <input id="email" type="email" name="fromEmail" class="form-control"
                                    placeholder="" value="{{ message.fromEmail ?? '' }}">
                             <small class="form-text">
                                 {{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
                             </small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input id="phone" type="tel" name="message[Phone]" class="form-control" placeholder=""
+                                   value="">
                         </div>
 
                         <div class="form-group">
