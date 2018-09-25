@@ -1,0 +1,59 @@
+// Home Page
+// --------------------------------------------------
+
+.hero {
+  &-content {
+    position: relative;
+    background-color: $primary;
+    background-size: cover;
+    background-position: 50%;
+    height: 60vh;
+    display: flex;
+    text-align: left;
+    align-items: center;
+    justify-content: left;
+    overflow: hidden;
+    @include media-breakpoint-down(sm) {
+      align-items: flex-end;
+    }
+  }
+  &-text-container {
+    font-size: 1rem;
+    background-color: $tertiary;
+    padding: 1rem;
+    @include media-breakpoint-up(md) {
+      background-color: rgba($primary,.75);
+      padding: 1rem 1.5rem 1rem 6rem;
+    }
+    @include media-breakpoint-up(lg) {
+      font-size: 1.2rem;
+    }
+  }
+  &-text {
+    color: $light;
+  }
+}
+
+.quote-home {
+  text-align: center;
+  &:before{
+    content: open-quote;
+    font-size: 8em;
+    line-height: 0;
+    vertical-align: -0.5em;
+    opacity: .2;
+  }
+  &:after{
+    content: close-quote;
+    font-size: 8em;
+    line-height: 0;
+    vertical-align: -0.5em;
+    opacity: .2;
+  }
+  span {
+    display:inline;
+    @extend h4;
+    font-weight: normal;
+    text-transform: none;
+  }
+}

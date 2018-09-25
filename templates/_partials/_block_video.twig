@@ -1,0 +1,12 @@
+<div class="row justify-content-center mb-5">
+    <div class="col-md-9">
+        {% set embed = craft.videoEmbedder.getEmbedUrl(block.videoUrl, {autoplay: 0, rel: 0, theme: 'dark'}) %}
+        <div class="embed-responsive embed-responsive-16by9">
+            {% if embed | length %}
+                <iframe src="{{ embed }}"></iframe>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,68 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/img/site/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/img/site/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/site/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/site/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/site/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/site/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/img/site/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/site/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/site/apple-touch-icon-180x180.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="spaceray-creative">
+    <link rel="yandex-tableau-widget" href="/img/site/yandex-browser-manifest.json">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/site/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/site/favicon-16x16.png">
+    <link rel="shortcut icon" href="/img/site/favicon.ico">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/img/site/mstile-144x144.png">
+    <meta name="msapplication-config" content="/img/site/browserconfig.xml">
+
+    {#{% hook 'seomaticRender' %}#}
+
+    <!-- Change Tab Color iOS / Android Devices -->
+    <meta name="theme-color" content="#532789"/>
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,700" rel="stylesheet">
+    <link rel="stylesheet" href="{{ siteUrl }}css/main.min.css">
+
+    {% block head %}{% endblock %}
+
+</head>
+<body>
+
+<div class="content">
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</div>
+
+<!-- MailChimp Signup Form and Google remarketing Ads -->
+<script id="mcjs">!function (c, h, i, m, p) {
+        m = c.createElement(h), p = c.getElementsByTagName(h)[0], m.async = 1, m.src = i, p.parentNode.insertBefore(m, p)
+    }(document, "script", "https://chimpstatic.com/mcjs-connected/js/users/1f2914db4d5f0bae53434ee62/99be76b83ad4a133a73026a55.js");</script>
+
+<script src="{{ siteUrl }}js/analytics.js"></script>
+<script src="{{ siteUrl }}js/jquery.min.js"></script>
+<script src="{{ siteUrl }}js/popper.min.js"></script>
+<script src="{{ siteUrl }}js/bootstrap.min.js"></script>
+<script src="{{ siteUrl }}js/lazysizes.min.js"></script>
+<script src="{{ siteUrl }}js/ls.bgset.min.js"></script>
+<script src="{{ siteUrl }}js/aos.min.js"></script>
+<script src="{{ siteUrl }}js/vendor.min.js"></script>
+<script src="{{ siteUrl }}js/main.min.js"></script>
+
+{% js %}
+AOS.init({
+    duration: 800,
+});
+{% endjs %}
+</body>
+</html>

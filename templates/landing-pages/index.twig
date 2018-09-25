@@ -1,0 +1,52 @@
+{% extends "_layout" %}
+{% block _inline_css %}
+    <style>
+        {{ source (_self.getTemplateName() ~ '_critical.min.css', ignore_missing = true) }}
+    </style>
+{% endblock %}
+
+{% block content %}
+    {% set image = entry.featuredImage.one() %}
+    {% set transformedImage = craft.imager.transformImage(image,
+        {
+            width: 1200,
+            format: 'jpg',
+            jpegQuality: 80,
+            interlace: true,
+            position: 'center-center'
+        }) %}
+    <section
+            style="background-image: url('{{ transformedImage.url }}');"
+            class="hero-content text-center">
+        <div class="container">
+            <div class="row justify-content-center" data-aos="zoom-in">
+                <div class="col-md-10">
+                    <h1>{{ entry.heading }}</h1>
+                    <div class="subhead mb-3">{{ entry.subheading }}</div>
+                </div>
+            </div>
+        </div>
+    </section><!-- /.hero-content -->
+
+    <section class="main-content section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <h2 class="heading">{{ entry.spotlightHeading }}</h2>
+                </div>
+            </div>
+            <div class="row text-center justify-content-center">
+                <div class="col-md-6">
+                    <a href="/img/21st-Annual-Athletes-Unlimited Golf-Outing--August-13.pdf" target="_blank"><img src="{{ siteUrl }}img/Save-the-Date-AU-2018.jpg" alt="Save the Date August 2018" class="img-fluid mb-3"></a>
+                </div>
+            </div>
+            <div class="row text-center justify-content-center">
+                <div class="col-md-10">
+                    {{ entry.body }}
+                    <a class="btn btn-primary btn-lg" href="/img/21st-Annual-Athletes-Unlimited Golf-Outing--August-13.pdf" target="_blank" role="button">Learn More &raquo;</a>
+                </div>
+            </div>
+        </div>
+    </section><!-- /.alt-content -->
+
+{% endblock %}

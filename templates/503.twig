@@ -1,0 +1,72 @@
+{% extends '_layout-blank' %}
+{% block _inline_css %}
+    <style>
+        {{ source (_self.getTemplateName() ~ '_critical.min.css', ignore_missing = true) }}
+    </style>
+{% endblock %}
+{% set title="System is Currently Offline" %}
+
+{% block content %}
+    {% if craft.config.isSystemOn %}
+        <section class="full-content bg-alt align-items-center">
+            <div class="container">
+                <div class="row justify-content-center text-center">
+                    <div class="col-md-10">
+                        {% if craft.rebrand.isLogoUploaded %}
+                            <div class="text-center">
+                                <img src="{{ craft.rebrand.logo.url }}" alt="Logo" class="img-fluid w-25 mb-4"/>
+                            </div>
+                        {% endif %}
+                        <h1>System Offline</h1>
+                        <div class="mb-5">The site is currently experiencing system maintenance.</div>
+                        <p><strong>Error Code:</strong> 503</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% else %}
+        <section class="full-content bg-alt">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+                        {% if craft.rebrand.isLogoUploaded %}
+                            <div class="text-center">
+                                <img src="{{ craft.rebrand.logo.url }}" alt="Logo" class="img-fluid mb-4"/>
+                            </div>
+                        {% endif %}
+                        <form method="post" accept-charset="UTF-8">
+                            {{ getCsrfInput() }}
+                            <p class="text-center mb-3">Please Login to view content.</p>
+                            <input type="hidden" name="action" value="users/login">
+                            <label for="inputEmail" class="sr-only">Email or Username</label>
+                            <input type="text"
+                                   id="loginName"
+                                   name="loginName"
+                                   class="form-control mb-3"
+                                   placeholder="Email or Username"
+                                   value="{{ craft.session.rememberedUsername }}"
+                                   required
+                                   autofocus>
+                            <label for="inputPassword" class="sr-only">Password</label>
+                            <input type="password"
+                                   id="password"
+                                   name="password"
+                                   class="form-control mb-3"
+                                   placeholder="Password"
+                                   required>
+                            <div class="checkbox mb-3">
+                                <label>
+                                    <input type="checkbox" name="rememberMe" value="1"> Remember me
+                                </label>
+                            </div>
+                            <button class="btn btn-lg btn-primary btn-block" type="submit" value="Login">Login</button>
+                            {% if errorMessage is defined %}
+                                <p class="mt-3">{{ errorMessage }}</p>
+                            {% endif %}
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% endif %}
+{% endblock %}

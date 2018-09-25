@@ -1,0 +1,32 @@
+{% extends "_layout" %}
+{% block _inline_css %}
+    <style>
+        {{ source (_self.getTemplateName() ~ '_critical.min.css', ignore_missing = true) }}
+    </style>
+{% endblock %}
+
+{% block content %}
+    {% include ('_includes/heading-wrap') %}
+
+    <section class="main-content section">
+        <div class="container">
+            {% if entry.pageContent|length %}
+                <div class="row justify-content-center mb-5">
+                    <div class="col-md-10">
+                        {{ entry.body }}
+                    </div>
+                </div>
+
+                {% include ('_includes/page-content') %}
+
+            {% else %}
+                <div class="row justify-content-center">
+                    <div class="col-md-10">
+                        {{ entry.body }}
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </section>
+
+{% endblock %}

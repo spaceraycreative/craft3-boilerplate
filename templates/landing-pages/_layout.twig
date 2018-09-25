@@ -1,0 +1,129 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/img/site/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/img/site/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/site/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/site/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/site/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/site/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/img/site/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/site/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/site/apple-touch-icon-180x180.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="spaceray-creative">
+    <link rel="yandex-tableau-widget" href="/img/site/yandex-browser-manifest.json">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/site/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/site/favicon-16x16.png">
+    <link rel="shortcut icon" href="/img/site/favicon.ico">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/img/site/mstile-144x144.png">
+    <meta name="msapplication-config" content="/img/site/browserconfig.xml">
+
+    {#{% hook 'seomaticRender' %}#}
+
+    <!-- Change Tab Color iOS / Android Devices -->
+    <meta name="theme-color" content="#532789"/>
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,700" rel="stylesheet">
+    <link rel="stylesheet" href="{{ siteUrl }}css/main.min.css">
+
+    {% block head %}{% endblock %}
+
+</head>
+<body>
+
+<header>
+    <section class="tertiary-content">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4 col-sm-12 text-center text-md-left mb-3 mb-md-0">
+                    <a class="navbar-brand" href="{{ siteUrl }}"><img src="/img/logo.svg" alt="Logo"></a>
+                </div>
+                <div class="col-md-8 col-sm-12 text-center text-md-right header-contact mb-3 mb-md-0">
+                    <div>
+                        <i class="fa fa-fw fa-phone"></i>&nbsp;<a
+                                href="tel:{{ contact.phone|replace({"(" : "1-", ")" : "-", ") " : "-", "." : "-"}) }}">{{ contact.phone }}</a>
+                    </div>
+                    <div>
+                        <i class="fa fa-fw fa-envelope"></i>&nbsp;<a
+                                href="mailto:{{ contact.email }}">{{ contact.email }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</header>
+{#<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"#}
+{#aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">#}
+{#<span class="navbar-toggler-icon"></span>#}
+{#</button>#}
+{#<div class="collapse navbar-collapse" id="navbarNav">#}
+{#{% import "_macros" as macros %}#}
+{#<ul class="navbar-nav ml-auto">#}
+{#<li class="nav-item">#}
+{#<a class="nav-link {{ macros.is_active('') }}" href="{{ siteUrl }}">Home</a>#}
+{#</li>#}
+{#<li class="nav-item">#}
+{#<a class="nav-link {{ macros.is_active('about') }}" href="{{ url('about') }}">About</a>#}
+{#</li>#}
+{#<li class="nav-item">#}
+{#<a class="nav-link {{ macros.is_active('services') }}"#}
+{#href="{{ url('services') }}">Services</a>#}
+{#</li>#}
+{#<li class="nav-item">#}
+{#<a class="nav-link {{ macros.is_active('blog') }}"#}
+{#href="{{ url('blog') }}">Blog</a>#}
+{#</li>#}
+{#<li class="nav-item">#}
+{#<a class="nav-link {{ macros.is_active('contact') }}"#}
+{#href="{{ url('contact') }}">Contact</a>#}
+{#</li>#}
+{#<li class="nav-item">#}
+{#<a class="nav-link {{ macros.is_active('style-guide') }}" href="{{ url('style-guide') }}">Style#}
+{#Guide</a>#}
+{#</li>#}
+{#</ul>#}
+{#</div>#}
+{#</div>#}
+{#</nav>#}
+
+<div class="content">
+    <main role="main">
+        {% block content %}
+        {% endblock %}
+    </main>
+</div>
+<footer class="footer">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6 text-center text-sm-left">
+                &copy; 2001 - {{ now|date('Y') }} <a href="{{ siteUrl }}">Athletes Unlimited</a>. All Rights Reserved.
+            </div>
+            <div class="col-md-6">
+                {% include "_includes/social" %}
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript" src="{{ siteUrl }}js/analytics.js"></script>
+<script type="text/javascript" src="{{ siteUrl }}js/jquery.min.js"></script>
+<script type="text/javascript" src="{{ siteUrl }}js/popper.min.js"></script>
+<script type="text/javascript" src="{{ siteUrl }}js/bootstrap.min.js"></script>
+<script type="text/javascript" src="{{ siteUrl }}js/lazysizes.min.js"></script>
+<script type="text/javascript" src="{{ siteUrl }}js/ls.bgset.min.js"></script>
+<script type="text/javascript" src="{{ siteUrl }}js/aos.min.js"></script>
+<script type="text/javascript" src="{{ siteUrl }}js/main.min.js"></script>
+
+<script>
+    AOS.init({
+        duration: 800,
+    });
+</script>
+</body>
+</html>

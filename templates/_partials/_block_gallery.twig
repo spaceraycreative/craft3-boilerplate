@@ -1,0 +1,65 @@
+<div class="row blog-section">
+    {% if block.gallery|length %}
+        {% cache globally using key craft.app.request.pathInfo %}
+            {% for image in block.gallery.all() %}
+                <div class="col-lg-4 col-md-6 col-sm-12 gallery-img">
+                    {% set transformedImages = craft.imager.transformImage(image, [
+                        { width: 1200, jpegQuality: 85 },
+                        { width: 1024, jpegQuality: 75 },
+                        { width: 768,  jpegQuality: 60 },
+                    ],{
+                        format: 'jpg',
+                        allowUpscale: true,
+                        mode: 'scale',
+                        interlace: true
+                    }) %}
+                    <div class="zoom-gallery">
+
+                        {% if lazyImage %}
+                            <a href="{{ craft.imager.base64Pixel(2,1) }}">
+                                <img class="img-fluid lazyload" src="{{ craft.imager.base64Pixel(2,1) }}"
+                                     data-sizes="100vw"
+                                     data-srcset="{{ craft.imager.srcset(transformedImages) }}"
+                                     alt="{{ image.title }}"
+                                     height="auto" width="100%">
+                            </a>
+                        {% else %}
+                            <a href="{{ transformedImages[1].url }}">
+                                <img class="img-fluid" src="{{ transformedImages[1].url }}" sizes="100vw"
+                                     srcset="{{ craft.imager.srcset(transformedImages) }}"
+                                     alt="{{ image.title }}" height="auto"
+                                     width="100%">
+                            </a>
+                        {% endif %}
+                        {% js %}
+                        $(document).ready(function () {
+                            $('.zoom-gallery').magnificPopup({
+                                delegate: 'a',
+                                type: 'image',
+                                closeOnContentClick: false,
+                                closeBtnInside: false,
+                                mainClass: 'mfp-with-zoom mfp-img-mobile',
+                                image: {
+                                    verticalFit: true,
+                                },
+                                gallery: {
+                                    enabled: true
+                                },
+                                zoom: {
+                                    enabled: true,
+                                    duration: 300, //  Also change the duration in CSS
+                                    opener: function (element) {
+                                        return element.find('img');
+                                    }
+                                }
+
+                            });
+                        });
+                        {% endjs %}
+                    </div>
+                </div>
+            {% endfor %}
+        {% endcache %}
+    {% endif %}
+</div>
+

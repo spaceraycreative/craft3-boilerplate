@@ -1,0 +1,99 @@
+// Animations
+// --------------------------------------------------
+
+@mixin animation($name) {
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@include animation(hover) {
+  0% {
+    transform: rotate(-15deg);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(-15deg);
+  }
+}
+
+@include animation(flicker) {
+  0% {
+    opacity: .25;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: .25;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  @include animation(comet) {
+    0% {
+      left: 100%;
+      top: 75%;
+      opacity: 0;
+    }
+    15% {
+      opacity: 1;
+    }
+    20% {
+      left: -100%;
+      top: -30%;
+      opacity: 1;
+    }
+    100% {
+      left: -100%;
+      top: -30%;
+      opacity: 1;
+    }
+  }
+}
+
+  @include media-breakpoint-down(sm) {
+    @include animation(comet) {
+      0% {
+        left: 100%;
+        top: 75%;
+        opacity: 0;
+      }
+      15% {
+        opacity: 1;
+      }
+      20% {
+        left: -100%;
+        top: 30%;
+        opacity: 1;
+      }
+      100% {
+        left: -100%;
+        top: 30%;
+        opacity: 1;
+      }
+    }
+  }
+
+@keyframes pulse {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+

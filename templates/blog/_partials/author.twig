@@ -1,0 +1,79 @@
+{% if blog.showAuthor %}
+
+    <div class="row justify-content-center mb-5">
+        <div class="col-md-10 col-lg-8">
+            <div class="blog-author">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-4 col-lg-2 text-center">
+                            {% if entry.author.photoUrl|length %}
+                                <img class="rounded-circle img-fluid mb-3 mb-md-0" src="{{ entry.author.photoUrl }}"
+                                     alt="{{ entry.author.photo }}"/>
+                            {% else %}
+                                {% set image = global.blogFallbackImage.first() %}
+                                {% set transformedImages = craft.imager.transformImage(image,
+                                    [
+                                        { width: 1200, ratio: 1/1 },
+                                        { width: 1024, ratio: 1/1 },
+                                        { width: 768, ratio: 1/1, jpegQuality: 65 },
+                                    ],
+                                    {
+                                        format: 'jpg',
+                                        allowUpscale: true,
+                                        mode: 'crop',
+                                        jpegQuality: 80,
+                                        position: image.focusPctX ~ '% ' ~ image.focusPctY ~ '%',
+                                        interlace: true
+                                    }
+                                    ) %}
+                                <img class="rounded-circle img-fluid mb-3 mb-md-0"
+                                     src="{{ transformedImages[1].url }}"
+                                     sizes="100px"
+                                     srcset="{{ craft.imager.srcset(transformedImages) }}"
+                                     alt="{{ image.title }}">
+                            {% endif %}
+                        </div>
+                        <div class="col-sm-12 col-md-8 col-lg-10">
+                            <div><strong>{{ entry.author.name }}</strong></div>
+                            <p>{{ entry.author.bio }}</p>
+                            <div><em>Posted: {{ entry.postDate.format('M d, Y') }}</em></div>
+                            {#<div><em>Last Updated: {{ entry.dateUpdated.format('M d, Y') }}</em></div>#}
+                            <span>Follow {{ entry.author.firstName }}:</span>
+                            <ul class="social-default">
+                                {% if entry.author.facebookUrl is not empty %}
+                                    <li class="facebook">
+                                        <a href="{{ entry.author.facebookUrl }}" target="_blank">
+                                            <i class="fa fa-fw fa-facebook"></i>
+                                        </a>
+                                    </li>
+                                {% endif %}
+                                {% if entry.author.twitterUrl is not empty %}
+                                    <li class="twitter">
+                                        <a href="{{ entry.author.twitterUrl }}" target="_blank">
+                                            <i class="fa fa-fw fa-twitter"></i>
+                                        </a>
+                                    </li>
+                                {% endif %}
+                                {% if entry.author.instagramUrl is not empty %}
+                                    <li class="instagram">
+                                        <a href="{{ entry.author.instagramUrl }}" target="_blank">
+                                            <i class="fa fa-fw fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                {% endif %}
+                                {% if entry.author.linkedinUrl is not empty %}
+                                    <li class="linkedin">
+                                        <a href="{{ entry.author.linkedinUrl }}" target="_blank">
+                                            <i class="fa fa-fw fa-linkedin"></i>
+                                        </a>
+                                    </li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endif %}

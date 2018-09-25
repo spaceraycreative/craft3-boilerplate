@@ -1,0 +1,43 @@
+{% if entry is defined %}
+    {% set image = craft.assets(entry.featuredBlogImage).limit(1).first() %}
+    {% set transformedImage = craft.imager.transformImage(image,
+        {
+            width: 1500,
+            format: 'jpg',
+            jpegQuality: 80,
+            interlace: true,
+            position: 'center-center'
+        }) %}
+{% else %}
+    {#{% set image = craft.assets(blog.blogFeaturedImage).limit(1).first() %}#}
+    {#{% set transformedImage = craft.imager.transformImage(image,#}
+        {#{#}
+            {#width: 1500,#}
+            {#format: 'jpg',#}
+            {#jpegQuality: 80,#}
+            {#interlace: true,#}
+            {#position: 'center-center'#}
+        {#}) %}#}
+
+{% endif %}
+<section
+        {% if entry.featuredBlogImage is defined %}
+            {% if entry.featuredBlogImage|length %}
+                style="background-image: url('{{ transformedImage.url }}');"
+            {% endif %}
+            {#{% elseif blog.blogFeaturedImage is defined %}#}
+                {#style="background-image: url('{{ transformedImage.url }}');"#}
+        {% endif %}
+        class="heading-wrap">
+    <div class="container">
+        <div class="row" data-aos="zoom-in">
+            <div class="col-md-12">
+                {% if entry.title is defined %}
+                    <h1>{{ entry.title }}</h1>
+                {% else %}
+                    <h1>{{ title }}</h1>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
