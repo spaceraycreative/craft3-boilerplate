@@ -28,7 +28,8 @@ logs
 
 # Uploaded files
 # ----------------------------------------------------------------------
-web/assets/*
+public/assets/*
+public/imager/*
 
 
 # Misc files

@@ -1,8 +1,50 @@
-// Header
+// Header - Athletes Unlimited
+// --------------------------------------------------
 
-.navbar-brand {
-  img {
-    height: 40px;
-    max-width: 450px;
+header {
+  background: linear-gradient(to right, $tertiary, $primary);
+  color: $light;
+  a {
+    color: $light;
+    &:hover {
+      color: $secondary;
+    }
   }
+  .logo {
+    height: 70px;
+    margin-top: -10px;
+    @include media-breakpoint-only(md) {
+      height: 80px;
+      margin-top: -20px;
+    }
+    @include media-breakpoint-up(lg) {
+      height: 100px;
+      margin-top: -50px;
+    }
+  }
+  .contact-info {
+    font-size: .875rem;
+    @include media-breakpoint-up(sm) {
+      font-size: 1rem;
+    }
+  }
+}
+
+.header-content {
+  border-bottom: 10px solid $secondary;
+
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+  @include media-breakpoint-up(md) {
+    padding-bottom: 0;
+    bottom: 0;
+  }
+}
+
+.navbar-expand-lg .navbar-nav .nav-item:last-child {
+  .nav-link {
+    padding-right: 0;
+  }
+
 }

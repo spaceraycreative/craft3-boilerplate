@@ -1,6 +1,7 @@
 @charset "utf-8";
-// Main - Spaceray Creative
+// Main - Athletes Unlimited
 // --------------------------------------------------
+
 
 // Main Bootstrap files
 @import "functions";
@@ -16,45 +17,62 @@
 @import "images";
 @import "code";
 @import "grid";
-@import "tables";
+//@import "tables";
 @import "forms";
 @import "buttons";
 @import "transitions";
 @import "dropdown";
-@import "button-group";
+//@import "button-group";
 @import "input-group";
 @import "custom-forms";
 @import "nav";
 @import "navbar";
-@import "card";
-@import "breadcrumb";
-@import "pagination";
+//@import "card";
+//@import "breadcrumb";
+//@import "pagination";
 @import "badge";
-@import "jumbotron";
+//@import "jumbotron";
 @import "alert";
-@import "progress";
+//@import "progress";
 @import "media";
-@import "list-group";
+//@import "list-group";
 @import "close";
-@import "modal";
-@import "tooltip";
-@import "popover";
-@import "carousel";
+//@import "modal";
+//@import "tooltip";
+//@import "popover";
+//@import "carousel";
 @import "utilities";
 @import "print";
 
 // Vendor Scss
 @import 'font-awesome';
 @import 'aos';
+@import 'vendor/zoom';
+@import 'vendor/magnific-popup';
+
+// Fonts
+@import 'fonts';
 
 // Partials
+@import '_partials/mixins';
+@import '_partials/animation';
 @import '_partials/typography';
 @import '_partials/forms';
 @import '_partials/layout';
 @import '_partials/buttons';
+@import '_partials/icons';
+@import '_partials/social-links';
+
+// Prism JS
+//@import '_prismjs/prism-theme';
+//@import '_prismjs/prism-line-numbers';
+
+// Individual Page Styles
+@import '_pages/blog';
+@import '_pages/home';
+@import '_pages/about';
 
 // Custom Scss
-@import 'fonts';
 @import 'master';
 @import 'header';
 @import 'footer';

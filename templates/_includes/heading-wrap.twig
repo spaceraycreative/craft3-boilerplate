@@ -1,21 +1,79 @@
-{%  if entry is defined %}
-{% set image = entry.featuredImage.one() %}
+{% if entry is defined %}
+    {% if entry.featuredImage is not empty %}
+        {% set image = entry.featuredImage.one() %}
+        {% set transformedImage = craft.imager.transformImage(image,
+            [
+                { width: 1500, ratio: 10/3 },
+                { width: 1024, ratio: 10/3 },
+                { width: 768, ratio: 8/3, jpegQuality: 65 },
+            ],
+            {
+                format: 'jpg',
+                allowUpscale: true,
+                position: image.getFocalPoint(),
+                mode: 'crop',
+                jpegQuality: 80,
+                interlace: true
+            }
+            ) %}
+    {% else %}
+        {% set image = global.featuredImageFallback.one() %}
+        {% set transformedImage = craft.imager.transformImage(image,
+            [
+                { width: 1500, ratio: 10/3 },
+                { width: 1024, ratio: 10/3 },
+                { width: 768, ratio: 4/3, jpegQuality: 65 },
+            ],
+            {
+                format: 'jpg',
+                allowUpscale: true,
+                position: image.getFocalPoint(),
+                mode: 'crop',
+                jpegQuality: 80,
+                interlace: true
+            }
+            ) %}
+    {% endif %}
+{% else %}
+    {% set image = global.featuredImageFallback.one() %}
     {% set transformedImage = craft.imager.transformImage(image,
+        [
+            { width: 1500, ratio: 10/3 },
+            { width: 1024, ratio: 10/3 },
+            { width: 768, ratio: 4/3, jpegQuality: 65 },
+        ],
         {
-            width: 1200,
             format: 'jpg',
+            allowUpscale: true,
+            position: image.getFocalPoint(),
+            mode: 'crop',
             jpegQuality: 80,
-            interlace: true,
-            position: 'center-center'
-        }) %}
+            interlace: true
+        }
+        ) %}
 {% endif %}
-<section
-        {%  if entry.featuredImage is defined %}{% if entry.featuredImage|length %} style="background-image: url('{{ transformedImage.url }}');" {% endif %}{% endif %}
-        class="heading-wrap">
-    <div class="container">
-        <div class="row" data-aos="zoom-in">
-            <div class="col-md-12">
-                {% if entry.title is defined %}
+{% css %}
+.bg-image {
+    background-image: url("{{ transformedImage[0].url }}");
+}
+@media screen and (min-width: 769px) and (max-width: 1024px)  {
+    .bg-image {
+        background-image: url("{{ transformedImage[1].url }}");
+    }
+}
+@media screen and (max-width: 768px) {
+    .bg-image {
+        background-image: url("{{ transformedImage[2].url }}");
+    }
+}
+{% endcss %}
+<section class="bg-image heading-wrap">
+    <div class="container" data-aos="zoom-in">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                {% if entry.pageTitle|length %}
+                    <h1>{{ entry.pageTitle }}</h1>
+                {% elseif entry.title|length %}
                     <h1>{{ entry.title }}</h1>
                 {% else %}
                     <h1>{{ title }}</h1>

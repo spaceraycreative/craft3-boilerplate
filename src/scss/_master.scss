@@ -1,46 +1,163 @@
-// Master
+// Master Styles - Athletes Unlimited
+// --------------------------------------------------
 
-.hero-content {
-  background-color: $primary;
-  color: $white;
-  z-index: 2;
-  position: relative;
-  background-size: cover;
-  background-position: center center;
-  //text-shadow: 2px 2px $gray-900;
-  padding: 6rem 0;
-  &::before {
-    z-index: -1;
-    position: absolute;
-    background: fade-out($secondary, 0.4);
-    content: '';
-    height: 100%;
-    width: 100%;
-    display: block;
-    left: 0;
-    top: 0;
-  }
-  h1 {
-    color: $white;
-  }
-  .subhead {
-    @extend h3;
-    color: $white;
+.heading-content {
+  background-color: $white;
+  .heading-section {
     margin-bottom: 0;
-    font-weight: normal;
   }
 }
 
-.heading-content {
-  background-color: $primary;
-  color: $white;
-  h1 {
-    font-weight: bold;
+hr {
+  border: 1.5px solid;
+  color: $primary;
+}
+
+.heading-section {
+  position: relative;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.heading {
+  position: relative;
+  @extend .mb-3;
+  padding-bottom: 1rem;
+  &::after {
+    display: block;
+    content: '';
+    width: 150px;
+    height: 3px;
+    background-color: $white;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
   }
-  .subhead {
-    @extend h2;
-    font-weight: normal;
+}
+
+.login-content {
+  background-color: $white;
+  width: 100vw;
+  height: 100vh;
+  a {
+    color: $primary;
+    &:hover {
+      color: scale-color($primary, $lightness: 15%);
+    }
   }
+  .login-image {
+    text-align: center;
+    margin-bottom: 1rem;
+    img {
+      max-width: 250px;
+      max-height: 250px;
+    }
+  }
+}
+
+// Instagram Section On Contact Page
+.instagram-content {
+  background-color: $secondary;
+  .heading {
+    color: $primary;
+    &::after {
+      background-color: $primary;
+    }
+  }
+  .subheading {
+    color: $primary;
+  }
+  img {
+    @include media-breakpoint-down(md) {
+      margin-bottom: 1rem;
+    }
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.spotlight {
+  text-align: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  @include media-breakpoint-down(sm) {
+    margin-bottom: 1rem;
+  }
+  img {
+    max-width: 330px;
+    margin-bottom: 1rem;
+  }
+  h2 {
+    font-size: 1.6rem;
+    @include media-breakpoint-only(md) {
+      font-size: 1.75rem;
+    }
+    @include media-breakpoint-only(sm) {
+      font-size: 1.25rem;
+    }
+  }
+}
+
+.cta {
+  margin-top: 2rem;
+}
+
+.sponsor {
+  filter: grayscale(100%);
+  transition: .4s ease;
+  &:hover {
+    filter: grayscale(0%);
+  }
+}
+
+.featured-athlete {
+  img {
+    transition: .4s ease;
+    &:hover {
+      filter: brightness(125%);
+    }
+  }
+}
+
+.post-details {
+  background-color: $light-gray;
+  border-bottom: 5px solid $secondary;
+  transition: .4s ease;
+  @extend .mb-4;
+  &:hover {
+    background-color: darken($light-gray, 7.5%);
+  }
+  img {
+    transition: .4s ease;
+    &:hover {
+      filter: brightness(125%);
+    }
+  }
+  .post-info {
+    padding: 1rem;
+  }
+  .btn {
+    margin-bottom: 0;
+  }
+}
+
+.alt-content {
+  .post-details {
+    background-color: $white;
+    .post-info {
+
+    }
+  }
+}
+
+.gallery-img {
+  margin-bottom: 2rem;
+}
+
+.disclaimer {
+  font-size: .875rem;
 }
 
 @include media-breakpoint-only(xs) {

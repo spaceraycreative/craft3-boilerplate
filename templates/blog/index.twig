@@ -5,19 +5,20 @@
     </style>
 {% endblock %}
 {% set title = "Blog" %}
+
 {% block content %}
-    {% include "_includes/heading-wrap.twig" %}
+    {% include ('_partials/heading-wrap') %}
 
     <section class="main-content section">
         <div class="container">
             <div class="row mb-3">
-                {% paginate craft.entries.section('blog').limit(20) as pageInfo, pageEntries %}
+                {% paginate craft.entries.section('blogPosts').limit(20) as pageInfo, pageEntries %}
 
                 {% for entry in pageEntries %}
                     <div class="col-md-6 mb-3">
                         <article class="blog-entry">
-                            {% if entry.featuredBlogImage is not empty %}
-                                {% set image = entry.featuredBlogImage.one() %}
+                            {% if entry.featuredBlogImage|length %}
+                                {% set image = entry.featuredBlogImage.first() %}
                                 {% set transformedImages = craft.imager.transformImage(image,
                                     [
                                         { width: 1200, ratio: 4/3 },
@@ -29,6 +30,7 @@
                                         allowUpscale: true,
                                         mode: 'crop',
                                         jpegQuality: 80,
+                                        position: image.focusPctX ~ '% ' ~ image.focusPctY ~ '%',
                                         interlace: true
                                     }
                                     ) %}
@@ -40,10 +42,10 @@
                                          alt="{{ image.title }}">
                                     <h3 class="blog-title">{{ entry.title }}</h3>
                                     <div class="mb-3">{{ entry.body|striptags|slice(0, 160) }}...</div>
-                                    <p>Posted on {{ entry.postDate.format('F d, Y') }}</p>
+                                    <p><em>Posted on {{ entry.postDate.format('F d, Y') }}</em></p>
                                 </a>
                             {% else %}
-                                {% set image = global.blogFallbackImage.first() %}
+                                {% set image = blog.entryFallbackImage.first() %}
                                 {% set transformedImages = craft.imager.transformImage(image,
                                     [
                                         { width: 1200, ratio: 4/3 },

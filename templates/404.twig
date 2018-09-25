@@ -2,23 +2,51 @@
 {% set title = "404" %}
 
 {% block content %}
+    {% include ('_includes/heading-wrap') %}
+
     <section class="main-content section">
         <div class="container">
             <div class="row align-items-center justify-content-center">
                 <div class="col-md-5 col-sm-12 text-md-right text-sm-center">
-                    <h1>404 Error</h1>
-                    <p>Oops. The page you have been looking for has either been moved, or
-                        doesn't exist</p>
-                    <div class="mb-1"><strong>Error Code: 404</strong></div>
-                    <a class="btn btn-primary" href="{{ siteUrl }}">Take Me Home!</a>
+                    {{ entry.body }}
+                    <a class="btn btn-default" href="{{ siteUrl }}">Take Me Home!</a>
                 </div>
+                {% if entry.image|length %}
                 <div class="col-md-4 offset-md-1 col-sm-12">
                     <div class="img-404">
-                        <img class="img-fluid" src="img/404.svg" alt="404 Error"/>
+                        {% set image = entry.image.one() %}
+                        {% set transformedImages = craft.imager.transformImage(image,
+                            [
+                                { width: 1200, ratio: 4/3 },
+                                { width: 1024, ratio: 4/3 },
+                                { width: 768, ratio: 4/3, jpegQuality: 65 },
+                            ],
+                            {
+                                format: 'jpg',
+                                allowUpscale: true,
+                                position: image.getFocalPoint(),
+                                mode: 'crop',
+                                jpegQuality: 80,
+                                interlace: true
+                            }
+                            ) %}
+
+                        <img class="img-fluid"
+                             src="{{ transformedImages[1].url }}"
+                             sizes="100vw"
+                             srcset="{{ craft.imager.srcset(transformedImages) }}"
+                             alt="{{ image.title }}">
                     </div>
                 </div>
+                {% endif %}
             </div>
         </div>
-    </section><!-- /.main-content -->
-    {% include "_includes/contact.twig" %}
+    </section><!-- /.primary-content -->
+    {% if entry.pageContent|length %}
+        <section class="alt-content section">
+            <div class="container">
+                {% include ('_includes/page-content') %}
+            </div>
+        </section>
+    {% endif %}
 {% endblock %}

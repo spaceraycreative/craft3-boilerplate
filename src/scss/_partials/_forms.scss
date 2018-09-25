@@ -1,32 +1,69 @@
 // Forms
+// --------------------------------------------------
 
-.form-group {
+.enupal-stripe-form {
+  textarea {
+    resize: vertical;
+  }
   input {
     @extend .form-control;
+    @extend .mb-2;
+    background-color: $light-gray;
   }
   textarea {
     @extend .form-control;
+    @extend .mb-2;
+    background-color: $light-gray;
   }
   select {
     @extend .form-control;
+    @extend .mb-2;
+    background-color: $light-gray;
   }
-}
-
-.form {
   .button {
-    font-weight: bold;
-    font-size: 1rem;
+    @extend .btn;
+    @extend .btn-default;
+    padding-left: 1.75rem;
+    padding-right: 1.75rem;
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+    }
+  }
+  .heading {
+    padding-bottom: 0;
+    margin-bottom: 0 !important;
+    &::after {
+      display: none;
+    }
   }
 }
 
-.form__label {
-  display: none;
+.primary-content {
+
 }
 
-.form__note {
-  display: none;
+.secondary-content {
+
 }
 
-textarea {
-  resize: vertical;
+.tertiary-content {
+
+}
+
+.main-content {
+
+}
+
+.alt-content {
+  .form {
+    input {
+      background-color: $white;
+    }
+    textarea {
+      background-color: $white;
+    }
+    select {
+      background-color: $white;
+    }
+  }
 }

@@ -6,68 +6,44 @@
 {% endblock %}
 
 {% block content %}
-    {% include "_includes/heading-wrap.twig" %}
+    {% include ('blog/_partials/heading-blog') %}
 
-    <section class="main-content section">
+    <section class="main-content last-section">
         <div class="container">
-            <article class="blog-content">
-                <div class="row">
-                    {% set image = entry.featuredBlogImage %}
-                    {% if image|length %}
-                    {% set transformedImages = craft.imager.transformImage(image,
-                        [
-                            { width: 1200, ratio: 4/2 },
-                            { width: 1024, ratio: 4/2 },
-                            { width: 768, ratio: 3/2, jpegQuality: 65 },
-                        ],
-                        {
-                            format: 'jpg',
-                            allowUpscale: true,
-                            mode: 'crop',
-                            jpegQuality: 80,
-                            interlace: true
-                        }
-                        ) %}
-
-
-                    <div class="col-md-12">
-                        <p>Posted on {{ entry.postDate.format('F d, Y') }}</p>
-                        <img class="img-fluid mb-5"
-                             src="{{ transformedImages[1].url }}"
-                             sizes="100vw"
-                             srcset="{{ craft.imager.srcset(transformedImages) }}"
-                             alt="{{ image.title }}">
-                    </div>
+            <article>
+                {% include ('blog/_partials/author') %}
+                <div class="blog-content">
+                    {% if entry.body is not empty %}
+                        <div class="row justify-content-center mb-5">
+                            <div class="col-md-10">
+                                {{ entry.body }}
+                            </div>
+                        </div>
                     {% endif %}
+                    {% set lazyImage = false %}
+                    {% for block in entry.blogContent %}
+                        {% include ('blog/_partials/_' ~ 'block_' ~ block.type.handle) %}
+                        {% if block.type.handle == "img" %}
+                            {% set lazyImage = true %}
+                        {% endif %}
+                    {% endfor %}
                 </div>
-                <div class="row justify-content-center mb-5">
-                    <div class="col-md-10">
-                        {{ entry.body }}
-                    </div>
-                </div>
-                {% set lazyImage = false %}
-                {% for block in entry.blogContent %}
-                    {% include ('blog/_partials/_' ~ 'block_' ~ block.type.handle) %}
-                    {% if block.type.handle == "image" %}
-                        {% set lazyImage = true %}
-                    {% endif %}
-                {% endfor %}
             </article>
+        </div>
+    </section>
+    <section class="tertiary-content section">
+        <div class="container">
             <div class="row related-content">
-                <div class="col-md-4">
-                    <h4>Birds Mentioned</h4>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h4>Most Recent</h4>
                     <hr>
-                    {% if entry.relatedBirds is not empty %}
                     <ul>
-                        {% for entry in entry.relatedBirds %}
+                        {% for entry in craft.entries.section('blog').limit(5) %}
                             <li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
                         {% endfor %}
                     </ul>
-                    {% else %}
-                        None of Daisy's Place's birds are mentioned in this post.
-                    {% endif %}
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 mb-3 mb-md-0">
                     <h4>You may also like</h4>
                     <hr>
                     <ul>
@@ -77,13 +53,54 @@
                     </ul>
                 </div>
                 <div class="col-md-4">
-                    <h4>Most Recent</h4>
+                    <h4>Share this Post</h4>
                     <hr>
-                    <ul>
-                        {% for entry in craft.entries.section('blog').limit(5) %}
-                            <li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
-                        {% endfor %}
+                    <ul class="social-color-block">
+                        <li class="social-share facebook">
+                            <a href="https://www.facebook.com/sharer.php?u={{ craft.request.getUrl() }}"
+                               target="blank" title="Share on Facebook"><i
+                                        class="fa fa-facebook fa-fw"></i></a></li>
+                        <li class="social-share twitter">
+                            <a href="https://twitter.com/intent/tweet?url={{ craft.request.getUrl() }}.&text={{ entry.title }}.&hashtags=spaceraycreative"
+                               target="blank" title="Share on Twitter"><i
+                                        class="fa fa-twitter fa-fw"></i></a></li>
+                        <li class="social-share linkedin">
+                            <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ craft.request.getUrl() }}&title={{ entry.title }}&summary={{ entry.body|striptags|slice(0, 160) }}...&source={{ siteName }}"
+                               target="blank" title="Share on LinkedIn"><i class="fa fa-linkedin fa-fw"></i></a></li>
+                        <li class="email"><a href="mailto:?subject={{ entry.title }}&body={{ craft.request.getUrl() }}"
+                                             title="Share via Email"><i
+                                        class="fa fa-envelope fa-fw"></i></a></li>
                     </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="main-content last-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div id="disqus_thread"></div>
+                    <script>
+
+                        /**
+                         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+                        var disqus_config = function () {
+                            this.page.url = '{{ craft.request.getUrl() }}';  // Replace PAGE_URL with your page's canonical URL variable
+                            this.page.identifier = 'blog-{{ entry.id }}'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                        };
+
+                        (function () { // DON'T EDIT BELOW THIS LINE
+                            var d = document, s = d.createElement('script');
+                            s.src = 'https://spaceraycreative.disqus.com/embed.js';
+                            s.setAttribute('data-timestamp', +new Date());
+                            (d.head || d.body).appendChild(s);
+                        })();
+                    </script>
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments
+                            powered by
+                            Disqus.</a></noscript>
                 </div>
             </div>
         </div>

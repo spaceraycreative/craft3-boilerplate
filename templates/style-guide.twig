@@ -6,16 +6,18 @@
 {% endblock %}
 {% set title = "Style Guide" %}
 {% block content %}
-    {% include "_includes/heading-wrap.twig" %}
+    {% include ('_includes/heading-wrap') %}
 
     <section class="main-content section">
         <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h2 class="heading">Core Elements</h2>
+            <div class="heading-section">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="heading">Core Elements</h2>
+                    </div>
                 </div>
             </div>
-            <div class="row mb-3">
+            <div class="row mb-5">
                 <div class="col-md-4">
                     <h1>Heading One</h1>
                     <h2>Heading Two</h2>
@@ -47,10 +49,10 @@
                     </ol>
                 </div>
                 <div class="col-md-4">
-                    <div><strong>This is a sentence with some bolded text.</strong></div>
-                    <div class="mb-3"><em>This is a sentence with some italic text.</em></div>
+                    <p><strong>This is a sentence with some bolded text.</strong></p>
+                    <p><em>This is a sentence with some italic text.</em></p>
                     <hr>
-                    <a href="#">This</a> is a default text link.
+                    <p><a href="#">This</a> is a default text link.</p>
                     <hr>
                     <blockquote>This is a block quote with some witty text.</blockquote>
                 </div>
@@ -93,9 +95,11 @@
     </section>
     <section class="alt-content section">
         <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h2 class="heading">Buttons</h2>
+            <div class="heading-section">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="heading">Buttons</h2>
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -105,6 +109,7 @@
                     <a class="btn btn-primary" href="#" role="button">.btn-primary</a>
                     <a class="btn btn-secondary" href="#" role="button">.btn-secondary</a>
                     <a class="btn btn-tertiary" href="#" role="button">.btn-tertiary</a>
+                    <a class="btn btn-quaternary" href="#" role="button">.btn-quaternary</a>
                     <a class="btn btn-success" href="#" role="button">.btn-success</a>
                     <a class="btn btn-danger" href="#" role="button">.btn-danger</a>
                     <a class="btn btn-warning" href="#" role="button">.btn-warning</a>
@@ -116,11 +121,34 @@
             </div><!-- /.row -->
             <div class="row">
                 <div class="col-md-12 mb-3">
+                    <h3>Outline Buttons</h3>
+                    <a class="btn btn-outline-default" href="#" role="button">.btn-outline-default</a>
+                    <a class="btn btn-outline-primary" href="#" role="button">.btn-outline-primary</a>
+                    <a class="btn btn-outline-secondary" href="#" role="button">.btn-outline-secondary</a>
+                    <a class="btn btn-outline-tertiary" href="#" role="button">.btn-outline-tertiary</a>
+                    <a class="btn btn-outline-quaternary" href="#" role="button">.btn-quaternary</a>
+                    <a class="btn btn-outline-success" href="#" role="button">.btn-outline-success</a>
+                    <a class="btn btn-outline-danger" href="#" role="button">.btn-outline-danger</a>
+                    <a class="btn btn-outline-warning" href="#" role="button">.btn-outline-warning</a>
+                    <a class="btn btn-outline-info" href="#" role="button">.btn-outline-info</a>
+                    <a class="btn btn-outline-light" href="#" role="button">.btn-outline-light</a>
+                    <a class="btn btn-outline-dark" href="#" role="button">.btn-outline-dark</a>
+                    <hr/>
+                </div>
+            </div><!-- /.row -->
+            <div class="row">
+                <div class="col-md-12 mb-3">
                     <h3>Large Buttons</h3>
                     <a class="btn btn-default btn-lg" href="#" role="button">.btn-default</a>
                     <a class="btn btn-primary btn-lg" href="#" role="button">.btn-primary</a>
                     <a class="btn btn-secondary btn-lg" href="#" role="button">.btn-secondary</a>
                     <a class="btn btn-tertiary btn-lg" href="#" role="button">.btn-tertiary</a>
+                    <a class="btn btn-quaternary btn-lg" href="#" role="button">.btn-quaternary</a>
+                    <a class="btn btn-outline-default btn-lg" href="#" role="button">.btn-outline-primary</a>
+                    <a class="btn btn-outline-primary btn-lg" href="#" role="button">.btn-outline-primary</a>
+                    <a class="btn btn-outline-secondary btn-lg" href="#" role="button">.btn-outline-secondary</a>
+                    <a class="btn btn-outline-tertiary btn-lg" href="#" role="button">.btn-outline-tertiary</a>
+                    <a class="btn btn-outline-quaternary btn-lg" href="#" role="button">.btn-quaternary</a>
                     <hr/>
                 </div>
             </div>
@@ -131,6 +159,12 @@
                     <a class="btn btn-primary btn-sm" href="#" role="button">.btn-primary</a>
                     <a class="btn btn-secondary btn-sm" href="#" role="button">.btn-secondary</a>
                     <a class="btn btn-tertiary btn-sm" href="#" role="button">.btn-tertiary</a>
+                    <a class="btn btn-quaternary btn-sm" href="#" role="button">.btn-quaternary</a>
+                    <a class="btn btn-outline-default btn-sm" href="#" role="button">.btn-outline-primary</a>
+                    <a class="btn btn-outline-primary btn-sm" href="#" role="button">.btn-outline-primary</a>
+                    <a class="btn btn-outline-secondary btn-sm" href="#" role="button">.btn-outline-secondary</a>
+                    <a class="btn btn-outline-tertiary btn-sm" href="#" role="button">.btn-outline-tertiary</a>
+                    <a class="btn btn-outline-quaternary btn-sm" href="#" role="button">.btn-quaternary</a>
                 </div>
             </div>
         </div>
@@ -191,9 +225,11 @@
     </section>
     <section class="main-content section">
         <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h2 class="heading">Main Content Test Area</h2>
+            <div class="heading-section">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="heading">Main Content Test Area</h2>
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -227,23 +263,26 @@
                     </ol>
                 </div>
                 <div class="col-md-4">
-                    <div><strong>This is a sentence of some bolded text.</strong></div>
-                    <div class="mb-3"><em>This is a sentence of some italic text.</em></div>
+                    <p><strong>This is a sentence of some bolded text.</strong></p>
+                    <p><em>This is a sentence of some italic text.</em></p>
                     <hr>
-                    <a href="#">This</a> is a default text link.
+                    <p><a href="#">This</a> is a default text link.</p>
                     <hr>
                     <blockquote>This is a block quote with some witty text.</blockquote>
                     <hr>
                     <a class="btn btn-default" href="#" role="button">.btn-default</a>
+                    <div><a class="btn btn-outline-default" href="#" role="button">.btn-outline-default</a></div>
                 </div>
             </div>
         </div>
-    </section>
+    </section><!-- /.main-content -->
     <section class="alt-content section">
         <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h2 class="heading">Alt Content Test Area</h2>
+            <div class="heading-section">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="heading">Alt Content Test Area</h2>
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -277,23 +316,26 @@
                     </ol>
                 </div>
                 <div class="col-md-4">
-                    <div><strong>This is a sentence of some bolded text.</strong></div>
-                    <div class="mb-3"><em>This is a sentence of some italic text.</em></div>
+                    <p><strong>This is a sentence of some bolded text.</strong></p>
+                    <p><em>This is a sentence of some italic text.</em></p>
                     <hr>
-                    <a href="#">This</a> is a default text link.
+                    <p><a href="#">This</a> is a default text link.</p>
                     <hr>
                     <blockquote>This is a block quote with some witty text.</blockquote>
                     <hr>
                     <a class="btn btn-default" href="#" role="button">.btn-default</a>
+                    <div><a class="btn btn-outline-default" href="#" role="button">.btn-outline-default</a></div>
                 </div>
             </div>
         </div>
-    </section>
+    </section><!-- /.alt-content -->
     <section class="primary-content section">
         <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h2 class="heading">Primary Content Test Area</h2>
+            <div class="heading-section">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="heading">Primary Content Test Area</h2>
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -327,23 +369,26 @@
                     </ol>
                 </div>
                 <div class="col-md-4">
-                    <div><strong>This is a sentence of some bolded text.</strong></div>
-                    <div class="mb-3"><em>This is a sentence of some italic text.</em></div>
+                    <p><strong>This is a sentence of some bolded text.</strong></p>
+                    <p><em>This is a sentence of some italic text.</em></p>
                     <hr>
-                    <a href="#">This</a> is a default text link.
+                    <p><a href="#">This</a> is a default text link.</p>
                     <hr>
                     <blockquote>This is a block quote with some witty text.</blockquote>
                     <hr>
                     <a class="btn btn-default" href="#" role="button">.btn-default</a>
+                    <div><a class="btn btn-outline-default" href="#" role="button">.btn-outline-default</a></div>
                 </div>
             </div>
         </div>
-    </section>
+    </section><!-- /.primary-content -->
     <section class="secondary-content section">
         <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h2 class="heading">Secondary Content Test Area</h2>
+            <div class="heading-section">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="heading">Secondary Content Test Area</h2>
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -377,23 +422,26 @@
                     </ol>
                 </div>
                 <div class="col-md-4">
-                    <div><strong>This is a sentence of some bolded text.</strong></div>
-                    <div class="mb-3"><em>This is a sentence of some italic text.</em></div>
+                    <p><strong>This is a sentence of some bolded text.</strong></p>
+                    <p><em>This is a sentence of some italic text.</em></p>
                     <hr>
-                    <a href="#">This</a> is a default text link.
+                    <p><a href="#">This</a> is a default text link.</p>
                     <hr>
                     <blockquote>This is a block quote with some witty text.</blockquote>
                     <hr>
                     <a class="btn btn-default" href="#" role="button">.btn-default</a>
+                    <div><a class="btn btn-outline-default" href="#" role="button">.btn-outline-default</a></div>
                 </div>
             </div>
         </div>
-    </section>
+    </section><!-- /.secondary-content -->
     <section class="tertiary-content section">
         <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h2 class="heading">Tertiary Content Test Area</h2>
+            <div class="heading-section">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="heading">Tertiary Content Test Area</h2>
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -427,23 +475,26 @@
                     </ol>
                 </div>
                 <div class="col-md-4">
-                    <div><strong>This is a sentence of some bolded text.</strong></div>
-                    <div class="mb-3"><em>This is a sentence of some italic text.</em></div>
+                    <p><strong>This is a sentence of some bolded text.</strong></p>
+                    <p><em>This is a sentence of some italic text.</em></p>
                     <hr>
-                    <a href="#">This</a> is a default text link.
+                    <p><a href="#">This</a> is a default text link.</p>
                     <hr>
                     <blockquote>This is a block quote with some witty text.</blockquote>
                     <hr>
                     <a class="btn btn-default" href="#" role="button">.btn-default</a>
+                    <div><a class="btn btn-outline-default" href="#" role="button">.btn-outline-default</a></div>
                 </div>
             </div>
         </div>
-    </section>
+    </section><!-- /.tertiary-section -->
     <section style="background-image: url( /img/image1.jpg );" class="bg-image-dark-overlay section">
         <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h2 class="heading">Dark Image Background Test Area</h2>
+            <div class="heading-section">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="heading">BG Image Dark Overlay Test Area</h2>
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -477,23 +528,26 @@
                     </ol>
                 </div>
                 <div class="col-md-4">
-                    <div><strong>This is a sentence of some bolded text.</strong></div>
-                    <div class="mb-3"><em>This is a sentence of some italic text.</em></div>
+                    <p><strong>This is a sentence of some bolded text.</strong></p>
+                    <p><em>This is a sentence of some italic text.</em></p>
                     <hr>
-                    <a href="#">This</a> is a default text link.
+                    <p><a href="#">This</a> is a default text link.</p>
                     <hr>
                     <blockquote>This is a block quote with some witty text.</blockquote>
                     <hr>
                     <a class="btn btn-default" href="#" role="button">.btn-default</a>
+                    <div><a class="btn btn-outline-default" href="#" role="button">.btn-outline-default</a></div>
                 </div>
             </div>
         </div>
-    </section>
+    </section><!-- /.bg-image-dark-overlay -->
     <section style="background-image: url( /img/image2.jpg );" class="bg-image-light-overlay section">
         <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h2 class="heading">Light Image Background Test Area</h2>
+            <div class="heading-section">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="heading">BG Image Light Overlay Test Area</h2>
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -527,23 +581,26 @@
                     </ol>
                 </div>
                 <div class="col-md-4">
-                    <div><strong>This is a sentence of some bolded text.</strong></div>
-                    <div class="mb-3"><em>This is a sentence of some italic text.</em></div>
+                    <p><strong>This is a sentence of some bolded text.</strong></p>
+                    <p><em>This is a sentence of some italic text.</em></p>
                     <hr>
-                    <a href="#">This</a> is a default text link.
+                    <p><a href="#">This</a> is a default text link.</p>
                     <hr>
                     <blockquote>This is a block quote with some witty text.</blockquote>
                     <hr>
                     <a class="btn btn-default" href="#" role="button">.btn-default</a>
+                    <div><a class="btn btn-outline-default" href="#" role="button">.btn-outline-default</a></div>
                 </div>
             </div>
         </div>
-    </section>
+    </section><!-- /.bg-image-light-overlay -->
     <section class="alt-content section">
         <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h2 class="heading">Form Test Area</h2>
+            <div class="heading-section">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="heading">Form Test Area</h2>
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -604,5 +661,4 @@
             </div>
         </div>
     </section>
-
 {% endblock %}

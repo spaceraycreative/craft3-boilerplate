@@ -1,64 +1,183 @@
 // Buttons
+// --------------------------------------------------
 
 .btn {
-  font-family: $font-family-heading;
-  font-size: 1.3rem;
-  letter-spacing: 2px;
-  margin: 5px 3px;
+  margin-bottom: 1rem;
+  border-width: $btn-outline-weight;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
-.btn-default {
-  background-color: $primary;
-  color: $white;
-  &:hover {
-    color: $white;
-    background-color: scale-color($primary, $lightness: -15%);
+.btn-md-inline {
+  @include media-breakpoint-up(sm) {
+    display:inline;
+    width: auto;
   }
 }
 
-.btn-primary {
-  &:hover {
-  }
+.btn-outline-default {
+  background-color: transparent;
+  background-image: none;
 }
 
-.btn-secondary {
-  color: $white;
-  &:hover {
-
-  }
-}
-
-.btn-tertiary {
-  background-color: $tertiary;
-  color: $white;
-  &:hover {
-    background-color: scale-color($tertiary, $lightness: -15%);
-    color: $white;
-  }
-}
-
-.btn-success {
-  &:hover {
-  }
-}
-
-.btn-danger {
-  &:hover {
-  }
-}
 .btn-warning {
+  color: $btn-text-color;
   &:hover {
+    color: $btn-text-color;
   }
 }
-.btn-info {
+
+.btn-outline-warning {
+  color: $warning;
   &:hover {
+    color: $btn-text-color;
   }
 }
-.btn-light {
-  &:hover {
+
+// Primary Content Button Overrides
+// --------------------------------------------------
+.primary-content {
+  .btn-default {
+    background-color: $secondary;
+    color: $primary;
+    &:hover {
+      color: $primary;
+      background-color: darken($secondary, 7.5%);
+    }
+  }
+  .btn-outline-default {
+    color: $secondary;
+    border-color: $secondary;
+    &:hover {
+      color: $white;
+      border-color: $white;
+    }
   }
 }
-.btn-dark {
-  &:hover {
+
+// Secondary Content Button Overrides
+// --------------------------------------------------
+.secondary-content {
+  .btn-default {
+    background-color: $tertiary;
+    color: $white;
+    &:hover {
+      color: $white;
+      background-color: darken($tertiary, 7.5%);
+    }
+  }
+  .btn-outline-default {
+    color: $tertiary;
+    border-color: $tertiary;
+    &:hover {
+      color: $white;
+      border-color: $white;
+    }
+  }
+}
+
+// Tertiary Content Button Overrides
+// --------------------------------------------------
+.tertiary-content {
+  .btn-default {
+    background-color: $secondary;
+    color: $white;
+    &:hover {
+      color: $white;
+      background-color: darken($secondary, 7.5%);
+    }
+  }
+  .btn-outline-default {
+    color: $secondary;
+    border-color: $secondary;
+    &:hover {
+      color: $white;
+      border-color: $white;
+    }
+  }
+}
+
+// Main Content Button Overrides
+// --------------------------------------------------
+.main-content {
+  .btn-default {
+    background-color: $primary;
+    color: $white;
+    &:hover {
+      color: $white;
+      background-color: darken($primary, 7.5%);
+    }
+  }
+  .btn-outline-default {
+    color: $primary;
+    border-color: $primary;
+    &:hover {
+      color: $btn-text-color;
+      background-color: $primary;
+    }
+  }
+}
+
+// Alt Content Button Overrides
+// --------------------------------------------------
+.alt-content {
+  .btn-default {
+    background-color: $primary;
+    color: $white;
+    &:hover {
+      color: $white;
+      background-color: darken($primary, 7.5%);
+    }
+  }
+  .btn-outline-default {
+    color: $primary;
+    border-color: $primary;
+    &:hover {
+      color: $btn-text-color;
+      background-color: $primary;
+    }
+  }
+}
+
+// BG Image Dark Overlay Button Overrides
+// --------------------------------------------------
+.bg-image-dark-overlay {
+  .btn-default {
+    background-color: $secondary;
+    color: $white;
+    &:hover {
+      color: $white;
+      background-color: darken($secondary, 7.5%);
+    }
+  }
+  .btn-outline-default {
+    color: $secondary;
+    border-color: $secondary;
+    &:hover {
+      color: $white;
+      border-color: $white;
+    }
+  }
+}
+
+// BG Image Light Overlay Button Overrides
+// --------------------------------------------------
+.bg-image-light-overlay {
+  .btn-default {
+    background-color: $secondary;
+    color: $white;
+    &:hover {
+      color: $white;
+      background-color: darken($secondary, 7.5%);
+    }
+  }
+
+  .btn-outline-default {
+    color: $secondary;
+    border-color: $secondary;
+    &:hover {
+      color: $white;
+      border-color: $white;
+    }
   }
 }

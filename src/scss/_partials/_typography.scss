@@ -1,4 +1,5 @@
 // Typography
+// --------------------------------------------------
 
 ::selection {
   background-color: $primary;
@@ -8,11 +9,66 @@
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: $font-family-heading;
   text-transform: uppercase;
-  letter-spacing: 2px;
+}
+
+h1, .h1 {
+  @include media-breakpoint-down(sm) {
+    font-size: $h1-font-size - 0.75;
+  }
+}
+
+h2, .h2 {
+  @include media-breakpoint-down(sm) {
+    font-size: $h2-font-size - 0.45;
+  }
+}
+
+h3, .h3 {
+  @include media-breakpoint-down(sm) {
+    font-size: $h3-font-size - 0.45;
+  }
+}
+
+h4, .h4 {
+  @include media-breakpoint-down(sm) {
+    font-size: $h4-font-size - 0.50;
+  }
+}
+
+h5, .h5 {
+  @include media-breakpoint-down(sm) {
+    font-size: $h5-font-size - 0.30;
+  }
+}
+
+h6, .h6 {
+  @include media-breakpoint-down(sm) {
+    font-size: 1rem;
+  }
 }
 
 a {
   transition: .4s ease;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+p > a,
+p > em > a,
+p > strong > a,
+main ul li > a,
+main ol li > a,
+.link {
+  border-bottom: 1px solid;
+  &:hover {
+    border-bottom: 3px solid;
+    text-decoration: none;
+  }
+}
+
+main li {
+  line-height: 2rem;
 }
 
 h1:only-child,
@@ -42,31 +98,18 @@ blockquote {
   font-style: italic;
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: 1px;
   &.heading {
     text-align: center;
     color: $primary;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-bottom: 3rem;
-    &:before, &:after {
-      @include media-breakpoint-up(sm) {
-        background-color: $primary;
-        content: '\a0';
-        width: 75px;
-        height: 3px;
-        position: relative;
-        top: 0.55em;
-        margin-right: 1em;
-        margin-left: 1em;
-      }
-    }
-    span {
-      @include media-breakpoint-up(sm) {
-        background-color: $white;
-        padding: 0 15px;
-      }
-    }
+    @extend .mb-3;
   }
+}
+
+.caption {
+  font-style: italic;
 }

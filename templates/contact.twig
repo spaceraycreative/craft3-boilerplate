@@ -12,7 +12,21 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 mb-3 mb-md-0">
-                    {{ contact.address|nl2br }}
+                    <ul>
+                        <li>{{ contact.address|nl2br }}</li>
+                        {% if contact.phone is not empty %}
+                            <li>
+                                <i class="fa fa-fw fa-phone"></i>&nbsp;<a
+                                        href="tel:{{ contact.phone|replace({"(" : "1-", ")" : "-", ") " : "-", "." : "-"}) }}">{{ contact.phone }}</a>
+                            </li>
+                        {% endif %}
+                        {% if contact.email is not empty %}
+                            <li>
+                                <i class="fa fa-fw fa-envelope"></i>&nbsp;&nbsp;<a
+                                        href="mailto:{{ contact.email }}">{{ contact.email }}</a>
+                            </li>
+                        {% endif %}
+                    </ul>
                 </div>
                 <div class="col-md-6">
                     {% if contact.map is not empty %}
