@@ -1,5 +1,5 @@
 {% if entry is defined %}
-    {% if entry.featuredImage is not empty %}
+    {% if entry.featuredImage|length %}
         {% set image = entry.featuredImage.one() %}
         {% set transformedImage = craft.imager.transformImage(image,
             [
@@ -16,7 +16,7 @@
                 interlace: true
             }
             ) %}
-    {% else %}
+    {% elseif global.featuredImageFallback|length %}
         {% set image = global.featuredImageFallback.one() %}
         {% set transformedImage = craft.imager.transformImage(image,
             [
@@ -33,8 +33,9 @@
                 interlace: true
             }
             ) %}
+    {% else %}
     {% endif %}
-{% else %}
+{% elseif global.featuredImageFallback|length %}
     {% set image = global.featuredImageFallback.one() %}
     {% set transformedImage = craft.imager.transformImage(image,
         [
@@ -51,8 +52,10 @@
             interlace: true
         }
         ) %}
+{% else %}
 {% endif %}
 {% css %}
+{% if global.featuredImageFallback and entry.featuredImage is not empty %}
 .bg-image {
     background-image: url("{{ transformedImage[0].url }}");
 }
@@ -66,15 +69,20 @@
         background-image: url("{{ transformedImage[2].url }}");
     }
 }
+{% endif %}
 {% endcss %}
 <section class="bg-image heading-wrap">
     <div class="container" data-aos="zoom-in">
         <div class="row justify-content-center">
             <div class="col-md-10">
-                {% if entry.pageTitle|length %}
-                    <h1>{{ entry.pageTitle }}</h1>
-                {% elseif entry.title|length %}
-                    <h1>{{ entry.title }}</h1>
+                {% if entry is defined %}
+                    {% if entry.pageTitle|length %}
+                        <h1>{{ entry.pageTitle }}</h1>
+                    {% elseif entry.title|length %}
+                        <h1>{{ entry.title }}</h1>
+                    {% else %}
+                        <h1>{{ title }}</h1>
+                    {% endif %}
                 {% else %}
                     <h1>{{ title }}</h1>
                 {% endif %}

@@ -33,27 +33,3 @@
     color: $light;
   }
 }
-
-.quote-home {
-  text-align: center;
-  &:before{
-    content: open-quote;
-    font-size: 8em;
-    line-height: 0;
-    vertical-align: -0.5em;
-    opacity: .2;
-  }
-  &:after{
-    content: close-quote;
-    font-size: 8em;
-    line-height: 0;
-    vertical-align: -0.5em;
-    opacity: .2;
-  }
-  span {
-    display:inline;
-    @extend h4;
-    font-weight: normal;
-    text-transform: none;
-  }
-}

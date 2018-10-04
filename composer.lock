@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "cc3c31b77d78e659fe560d1086e08127",
+    "content-hash": "d2485e8fdc629152e44215cadd702bcf",
     "packages": [
         {
             "name": "aelvan/imager",
@@ -72,16 +72,16 @@
         },
         {
             "name": "albertcht/invisible-recaptcha",
-            "version": "v1.8.3",
+            "version": "v1.8.4",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/albertcht/invisible-recaptcha/zipball/6a34a1ce6cd4ae8216d07ee5ef8fb2a201774de6",
-                "reference": "6a34a1ce6cd4ae8216d07ee5ef8fb2a201774de6",
+                "url": "https://api.github.com/repos/albertcht/invisible-recaptcha/zipball/8aa950b42aa51452a696338733a05e077ba5a379",
+                "reference": "8aa950b42aa51452a696338733a05e077ba5a379",
                 "shasum": ""
             },
             "require": {
                 "guzzlehttp/guzzle": "^6.2",
-                "illuminate/support": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*",
+                "illuminate/support": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*|5.7.*",
                 "php": "^5.6.4 || ^7.0"
             },
             "type": "library",
@@ -117,7 +117,7 @@
                 "php",
                 "recaptcha"
             ],
-            "time": "2018-05-15T01:31:25+00:00"
+            "time": "2018-08-19T03:44:31+00:00"
         },
         {
             "name": "aws/aws-sdk-php",
@@ -469,11 +469,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.0.25",
+            "version": "3.0.26.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/30b95277d526af7aeff4a10c23b583fde0adb383",
-                "reference": "30b95277d526af7aeff4a10c23b583fde0adb383",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/61fb42721fc40e65b0f6b459c8c0b47dd5d91146",
+                "reference": "61fb42721fc40e65b0f6b459c8c0b47dd5d91146",
                 "shasum": ""
             },
             "require": {
@@ -504,7 +504,7 @@
                 "twig/twig": "^2.5.0",
                 "yiisoft/yii2": "~2.0.15.1",
                 "yiisoft/yii2-debug": "^2.0.10",
-                "yiisoft/yii2-queue": "^2.0.1",
+                "yiisoft/yii2-queue": "2.1.0",
                 "yiisoft/yii2-swiftmailer": "^2.1.0",
                 "zendframework/zend-feed": "^2.8.0"
             },
@@ -544,7 +544,7 @@
                 "docs": "https://github.com/craftcms/docs",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2018-09-18T16:57:29+00:00"
+            "time": "2018-09-29T22:15:04+00:00"
         },
         {
             "name": "craftcms/contact-form",
@@ -1030,11 +1030,11 @@
         },
         {
             "name": "egulias/email-validator",
-            "version": "2.1.5",
+            "version": "2.1.6",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/54859fabea8b3beecbb1a282888d5c990036b9e3",
-                "reference": "54859fabea8b3beecbb1a282888d5c990036b9e3",
+                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/0578b32b30b22de3e8664f797cf846fc9246f786",
+                "reference": "0578b32b30b22de3e8664f797cf846fc9246f786",
                 "shasum": ""
             },
             "require": {
@@ -1072,15 +1072,15 @@
                 "validation",
                 "validator"
             ],
-            "time": "2018-08-16T20:49:45+00:00"
+            "time": "2018-09-25T20:47:26+00:00"
         },
         {
             "name": "elvanto/litemoji",
-            "version": "1.4.2",
+            "version": "1.4.4",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elvanto/litemoji/zipball/af94de6becfbc2f4d9c52e1142183146fd087f36",
-                "reference": "af94de6becfbc2f4d9c52e1142183146fd087f36",
+                "url": "https://api.github.com/repos/elvanto/litemoji/zipball/17bf635e4d1a5b4d35d2cadf153cd589b78af7f0",
+                "reference": "17bf635e4d1a5b4d35d2cadf153cd589b78af7f0",
                 "shasum": ""
             },
             "require": {
@@ -1100,7 +1100,7 @@
                 "emoji",
                 "php-emoji"
             ],
-            "time": "2018-08-02T03:48:08+00:00"
+            "time": "2018-09-28T05:23:38+00:00"
         },
         {
             "name": "embed/embed",
@@ -1147,11 +1147,11 @@
         },
         {
             "name": "enshrined/svg-sanitize",
-            "version": "0.9.0",
+            "version": "0.9.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/darylldoyle/svg-sanitizer/zipball/509455b32ddfcb6db993ed3564f0670166c6c4c7",
-                "reference": "509455b32ddfcb6db993ed3564f0670166c6c4c7",
+                "url": "https://api.github.com/repos/darylldoyle/svg-sanitizer/zipball/e0cb5ad3abea5459e0962cf79a92d34714c74dfa",
+                "reference": "e0cb5ad3abea5459e0962cf79a92d34714c74dfa",
                 "shasum": ""
             },
             "type": "library",
@@ -1170,7 +1170,7 @@
                 }
             ],
             "description": "An SVG sanitizer for PHP",
-            "time": "2018-07-19T17:21:27+00:00"
+            "time": "2018-10-01T17:11:02+00:00"
         },
         {
             "name": "ether/simplemap",
@@ -1816,7 +1816,7 @@
         },
         {
             "name": "illuminate/contracts",
-            "version": "v5.5.41",
+            "version": "v5.5.43",
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/illuminate/contracts/zipball/04fbae936ed14e673dddd18a39662f49e7d199f5",
@@ -1854,11 +1854,11 @@
         },
         {
             "name": "illuminate/support",
-            "version": "v5.5.41",
+            "version": "v5.5.43",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/b93ddc422cf2b14e3d0237c775e5deb57d849bd8",
-                "reference": "b93ddc422cf2b14e3d0237c775e5deb57d849bd8",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/ebe5d19b3ef3e73bca839b8614287fbe2b06ab7d",
+                "reference": "ebe5d19b3ef3e73bca839b8614287fbe2b06ab7d",
                 "shasum": ""
             },
             "require": {
@@ -1901,7 +1901,7 @@
             ],
             "description": "The Illuminate Support package.",
             "homepage": "https://laravel.com",
-            "time": "2018-06-08T13:45:23+00:00"
+            "time": "2018-08-10T19:40:01+00:00"
         },
         {
             "name": "imageoptim/imageoptim",
@@ -2609,11 +2609,11 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "1.33.0",
+            "version": "1.34.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/55667c1007a99e82030874b1bb14d24d07108413",
-                "reference": "55667c1007a99e82030874b1bb14d24d07108413",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/1dbd3cb01c5645f3e7deda7aa46ef780d95fcc33",
+                "reference": "1dbd3cb01c5645f3e7deda7aa46ef780d95fcc33",
                 "shasum": ""
             },
             "require": {
@@ -2650,15 +2650,15 @@
                 "datetime",
                 "time"
             ],
-            "time": "2018-08-07T08:39:47+00:00"
+            "time": "2018-09-20T19:36:25+00:00"
         },
         {
             "name": "nystudio107/craft-retour",
-            "version": "3.0.7",
+            "version": "3.0.9",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-retour/zipball/1cb76b2146d6d3a85275fa8c8b8bfef859d5384a",
-                "reference": "1cb76b2146d6d3a85275fa8c8b8bfef859d5384a",
+                "url": "https://api.github.com/repos/nystudio107/craft-retour/zipball/8584a2d4a02ea117d9a5689279a16de100710fdb",
+                "reference": "8584a2d4a02ea117d9a5689279a16de100710fdb",
                 "shasum": ""
             },
             "require": {
@@ -2705,15 +2705,15 @@
                 "docs": "https://github.com/nystudio107/retour/blob/v1/README.md",
                 "issues": "https://github.com/nystudio107/retour/issues"
             },
-            "time": "2018-09-19T19:06:05+00:00"
+            "time": "2018-09-25T03:36:29+00:00"
         },
         {
             "name": "nystudio107/craft-seomatic",
-            "version": "3.1.21",
+            "version": "3.1.22",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/37052e99485e85911a693b7035a27c924646da26",
-                "reference": "37052e99485e85911a693b7035a27c924646da26",
+                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/26814be26bc771e3aaca5f5e197d2c3cc963f4e0",
+                "reference": "26814be26bc771e3aaca5f5e197d2c3cc963f4e0",
                 "shasum": ""
             },
             "require": {
@@ -2777,7 +2777,7 @@
                 "docs": "https://github.com/nystudio107/craft-seomatic/blob/v3/README.md",
                 "issues": "https://github.com/nystudio107/craft-seomatic/issues"
             },
-            "time": "2018-09-18T17:56:09+00:00"
+            "time": "2018-09-25T19:31:35+00:00"
         },
         {
             "name": "nystudio107/craft-typogrify",
@@ -3249,11 +3249,11 @@
         },
         {
             "name": "rias/craft-contact-form-extensions",
-            "version": "1.0.10",
+            "version": "1.0.11",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Rias500/craft-contact-form-extensions/zipball/2a09a26185c4d784494c87a8b83cf8349cc221cd",
-                "reference": "2a09a26185c4d784494c87a8b83cf8349cc221cd",
+                "url": "https://api.github.com/repos/Rias500/craft-contact-form-extensions/zipball/f5996f09e4b695255fdb87ab3859e99a604ef352",
+                "reference": "f5996f09e4b695255fdb87ab3859e99a604ef352",
                 "shasum": ""
             },
             "require": {
@@ -3300,7 +3300,7 @@
                 "docs": "https://github.com/Rias500/craft-contact-form-extensions/blob/master/README.md",
                 "issues": "https://github.com/Rias500/craft-contact-form-extensions/issues"
             },
-            "time": "2018-08-21T18:54:38+00:00"
+            "time": "2018-09-26T12:54:51+00:00"
         },
         {
             "name": "rize/uri-template",
@@ -4448,11 +4448,11 @@
         },
         {
             "name": "yiisoft/yii2-debug",
-            "version": "2.0.13",
+            "version": "2.0.14",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/b37f414959c2fafefb332020b42037cd17c1cb7f",
-                "reference": "b37f414959c2fafefb332020b42037cd17c1cb7f",
+                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/dc5a4a8529de1a41dbb037dbabf1f3f93002f21d",
+                "reference": "dc5a4a8529de1a41dbb037dbabf1f3f93002f21d",
                 "shasum": ""
             },
             "require": {
@@ -4467,10 +4467,9 @@
             },
             "autoload": {
                 "psr-4": {
-                    "yii\\debug\\": ""
+                    "yii\\debug\\": "src"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "BSD-3-Clause"
             ],
@@ -4486,7 +4485,7 @@
                 "debugger",
                 "yii2"
             ],
-            "time": "2017-12-05T07:36:23+00:00"
+            "time": "2018-09-23T21:41:04+00:00"
         },
         {
             "name": "yiisoft/yii2-queue",
@@ -4557,16 +4556,16 @@
         },
         {
             "name": "yiisoft/yii2-swiftmailer",
-            "version": "2.1.1",
+            "version": "2.1.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-swiftmailer/zipball/fd917fbe63b7ea796c52902143b83b98e65bfb73",
-                "reference": "fd917fbe63b7ea796c52902143b83b98e65bfb73",
+                "url": "https://api.github.com/repos/yiisoft/yii2-swiftmailer/zipball/09659a55959f9e64b8178d842b64a9ffae42b994",
+                "reference": "09659a55959f9e64b8178d842b64a9ffae42b994",
                 "shasum": ""
             },
             "require": {
                 "swiftmailer/swiftmailer": "~6.0",
-                "yiisoft/yii2": "~2.0.4"
+                "yiisoft/yii2": ">=2.0.4"
             },
             "type": "yii2-extension",
             "extra": {
@@ -4579,7 +4578,6 @@
                     "yii\\swiftmailer\\": "src"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "BSD-3-Clause"
             ],
@@ -4598,7 +4596,7 @@
                 "swiftmailer",
                 "yii2"
             ],
-            "time": "2018-04-24T23:17:42+00:00"
+            "time": "2018-09-23T22:00:47+00:00"
         },
         {
             "name": "zendframework/zend-escaper",

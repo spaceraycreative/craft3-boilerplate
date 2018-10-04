@@ -1,7 +1,6 @@
 // Blog
 // --------------------------------------------------
 
-
 h2 {
   &.blog {
     margin-top: .7rem;
@@ -12,52 +11,47 @@ h2 {
   @include media-breakpoint-up(md) {
     font-size: 1.2rem;
     line-height: 2rem;
-    h2,h3,h4,h5,h6 {
+    h2, h3, h4, h5, h6 {
       margin-top: 3rem;
     }
   }
 }
+
 article {
+  figure {
+    &.blog {
+      margin: 0;
+      text-align: center;
+    }
+  }
+  figcaption {
+    .blog-image-caption {
+      text-align: center;
+      margin: .5rem auto 0;
+      line-height: 1.4em;
+    }
+  }
+  .blog-section {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  .blog-wrapper {
+    p {
+      line-height: 1.8em;
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+    }
+  }
+  .blog-author {
+    display: block;
+    padding: 1rem;
+    background-color: $light-gray;
 
-}
-
-figure {
-  &.blog {
-    margin: 0;
-    text-align: center;
+    .social-default {
+      margin-bottom: 0;
+    }
   }
 }
-
-figcaption {
-  .blog-image-caption {
-    text-align: center;
-    margin: .5rem auto 0;
-    line-height: 1.4em;
-  }
-}
-
-.blog-section {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
-.blog-wrapper {
-  p {
-    line-height: 1.8em;
-    font-size: 1.3rem;
-    margin-bottom: 2rem;
-  }
-}
-.blog-author {
-  display: block;
-  padding: 1rem;
-  background-color: $light-gray;
-
-  .social-default {
-    margin-bottom: 0;
-  }
-}
-
 
 // Stylize Blog Code
 // --------------------------------------------------
@@ -69,7 +63,6 @@ figcaption {
     font-size: .875em;
   }
 }
-
 
 .code-caption {
   padding: 1em;

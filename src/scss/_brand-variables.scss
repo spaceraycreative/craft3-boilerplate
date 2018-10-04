@@ -1,22 +1,23 @@
 // Brand Variables
 // --------------------------------------------------
 //
-// Contents:
+// Table of Contents:
 // 01. Colors
-// 02. Fonts
-// 03. Buttons
-// 04. Navigation
+// 02. Spacing
+// 03. Fonts
+// 04. Buttons
+// 05. Navigation
 //
 // --------------------------------------------------
 
 // 01. Colors
 
-$primary:       #532789 !default;
-$secondary:     #a19061 !default;
-$tertiary:      #495b7d !default;
-$quaternary:    #32405d !default;
-$light:         #e6e6e6 !default;
-$dark:          #4c4c4d !default;
+$primary: #0b4061 !default;
+$secondary: #357c7b !default;
+$tertiary: #a0d39d !default;
+$quaternary: #6eb58f !default;
+$light: #e6e6e6 !default;
+$dark: #4c4c4d !default;
 
 $light-gray: #e6e6e6;
 $medium-gray: #cacaca;
@@ -25,71 +26,97 @@ $dark-gray: #4c4c4d;
 $black: #222;
 $white: #fefefe;
 
-$success:       #28a745 !default;
-$info:          #17a2b8 !default;
-$warning:       #ffc107 !default;
-$danger:        #dc3545 !default;
-$light:         $light-gray !default;
-$dark:          $dark-gray !default;
+$success: #28a745 !default;
+$info: #17a2b8 !default;
+$warning: #ffc107 !default;
+$danger: #dc3545 !default;
+$light: $light-gray !default;
+$dark: $dark-gray !default;
 
 $code-wrapper-color: #2b303b;
 
 // Maps Colors for dynamic Layout/Button Creation.
 $theme-colors: () !default;
 $theme-colors: map-merge((
-        "main":       $white,
-        "alt":        $light-gray,
-        "primary":    $primary,
-        "secondary":  $secondary,
-        "tertiary":   $tertiary,
+        "main": $white,
+        "alt": $light-gray,
+        "primary": $primary,
+        "secondary": $secondary,
+        "tertiary": $tertiary,
         "quaternary": $quaternary,
-        "success":    $success,
-        "info":       $info,
-        "warning":    $warning,
-        "danger":     $danger,
-        "light":      $white,
-        "dark":       $dark
+        "success": $success,
+        "info": $info,
+        "warning": $warning,
+        "danger": $danger,
+        "light": $white,
+        "dark": $dark
 ), $theme-colors);
 
 // The yiq lightness value that determines when the lightness of color changes from "dark" to "light". Acceptable values are between 0 and 255.
 $yiq-contrasted-threshold: 200 !default;
 
-// 02. Fonts
-$font-family-heading: 'kenyan_coffee', 'Montserrat', "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"!default;
+// 02. Spacing
+//
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+// You can add more entries to the $spacers map, should you need more variation.
+
+$spacer: 1rem !default;
+$spacers: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$spacers: map-merge(
+                (
+                        0: 0,
+                        1: ($spacer * .25),
+                        2: ($spacer * .5),
+                        3: $spacer,
+                        4: ($spacer * 1.5),
+                        5: ($spacer * 3)
+                ),
+                $spacers
+);
+
+// 03. Fonts
+$font-family-heading: 'Montserrat', "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
 $font-family-base: 'Montserrat', "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
 $font-family-monospace: Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 
-
 $body-color: darken($primary, 7.5%) !default;
 
-$font-size-base:              1.1rem !default; // Assumes the browser default, typically `16px`
-$font-size-lg:                ($font-size-base * 1.25) !default;
-$font-size-sm:                ($font-size-base * .875) !default;
+$font-size-base: 1.1rem !default; // Assumes the browser default, typically `16px`
+$font-size-lg: ($font-size-base * 1.25) !default;
+$font-size-sm: ($font-size-base * .875) !default;
 
-$font-weight-light:           300 !default;
-$font-weight-normal:          400 !default;
-$font-weight-bold:            700 !default;
+$font-weight-light: 300 !default;
+$font-weight-normal: 400 !default;
+$font-weight-bold: 700 !default;
 
-$font-weight-base:            $font-weight-light !default;
-$line-height-base:            1.5 !default;
+$font-weight-base: $font-weight-light !default;
+$line-height-base: 1.5 !default;
 
-$h1-font-size:                $font-size-base * 2.5 !default;
-$h2-font-size:                $font-size-base * 2 !default;
-$h3-font-size:                $font-size-base * 1.75 !default;
-$h4-font-size:                $font-size-base * 1.5 !default;
-$h5-font-size:                $font-size-base * 1.25 !default;
-$h6-font-size:                $font-size-base !default;
+$h1-font-size: $font-size-base * 2.5 !default;
+$h2-font-size: $font-size-base * 2 !default;
+$h3-font-size: $font-size-base * 1.75 !default;
+$h4-font-size: $font-size-base * 1.5 !default;
+$h5-font-size: $font-size-base * 1.25 !default;
+$h6-font-size: $font-size-base !default;
+
+//$headings-margin-bottom: ($spacer / 2) !default;
+$headings-font-family: inherit !default;
+$headings-font-weight: $font-weight-bold !default;
+$headings-line-height: 1.2 !default;
+$headings-color: inherit !default;
 
 $section-padding: 3rem;
 
-// 03. Buttons
+// 04. Buttons
 $btn-text-color: $white;
 $btn-outline-weight: 2px;
 
-// 04. Navigation
-$navbar-dark-color:                 $light !default;
-$navbar-dark-hover-color:           $secondary !default;
-$navbar-dark-active-color:          $secondary !default;
-$navbar-dark-disabled-color:        rgba($light, .25) !default;
-$navbar-dark-toggler-icon-bg:       str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-dark-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23") !default;
-$navbar-dark-toggler-border-color:  rgba($light, .4) !default;
+// 05. Navigation
+$navbar-dark-color: $light !default;
+$navbar-dark-hover-color: $secondary !default;
+$navbar-dark-active-color: $secondary !default;
+$navbar-dark-disabled-color: rgba($light, .25) !default;
+$navbar-dark-toggler-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-dark-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23") !default;
+$navbar-dark-toggler-border-color: rgba($light, .4) !default;
