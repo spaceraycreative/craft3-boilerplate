@@ -23,8 +23,8 @@
                 <div class="col-md-10">
                     <h1 class="h3">{{ entry.heading }}</h1>
                     <div class="subhead mb-3">{{ entry.subheading }}</div>
-                    <a class="btn btn-primary btn-lg" href="#" role="button">Download Free Trial &raquo;</a>
-                    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a>
+                    <a class="btn btn-default btn-lg" href="#" role="button">Download Free Trial &raquo;</a>
+                    <a class="btn btn-default btn-lg" href="#" role="button">Learn more &raquo;</a>
                 </div>
             </div>
         </div>
@@ -62,12 +62,12 @@
                         {% endfor %}
                         <h3>{{ block.heading }}</h3>
                         <div class="mt-auto mb-1">{{ block.text }}</div>
-                        <a class="btn btn-secondary mt-auto"
+                        <a class="btn btn-default mt-auto"
                            href="{% for entry in block.spotlightUrl.limit(1).all() %}{{ entry.url }}{% endfor %}">{{ block.buttonText }}</a>
                     </div>
                 {% endfor %}
             </div>
         </div>
-    </section><!-- /.alt-content -->
+    </section>
 
 {% endblock %}
