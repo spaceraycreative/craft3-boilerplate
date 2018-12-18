@@ -2,7 +2,7 @@ Spaceray Creative - Craft 3.x Boilerplate
 ==========
 This is the Spaceray Creative boilerplate project for any [Craft CMS](https://www.craftcms.com) 3.x project. 
 
-![alt text](web/img/logo-on-light.svg "Spaceray Creative Logo")
+![Spaceray Creative Logo](/public/img/logo-on-light.svg "Spaceray Creative Logo")
 
 ## Dependencies
 
