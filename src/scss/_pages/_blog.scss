@@ -7,7 +7,7 @@ h2 {
   }
 }
 
-.blog-content, .work-content {
+.blog-content, .project-content {
   @include media-breakpoint-up(md) {
     font-size: 1.2rem;
     line-height: 2rem;
@@ -24,17 +24,21 @@ article {
       text-align: center;
     }
   }
+
   figcaption {
-    .blog-image-caption {
+    &.blog-image-caption {
+      font-size: 1rem;
+      line-height: 1.4em;
       text-align: center;
       margin: .5rem auto 0;
-      line-height: 1.4em;
     }
   }
+
   .blog-section {
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
+
   .blog-wrapper {
     p {
       line-height: 1.8em;
@@ -42,6 +46,7 @@ article {
       margin-bottom: 2rem;
     }
   }
+
   .blog-author {
     display: block;
     padding: 1rem;
@@ -53,9 +58,36 @@ article {
   }
 }
 
+.post-details {
+  background-color: $light-gray;
+  border-bottom: 5px solid $secondary;
+  transition: .4s ease;
+  @extend .mb-4;
+
+  &:hover {
+    background-color: darken($light-gray, 7.5%);
+  }
+
+  img {
+    transition: .4s ease;
+
+    &:hover {
+      filter: brightness(125%);
+    }
+  }
+
+  .post-info {
+    padding: 1rem;
+  }
+
+  .btn {
+    margin-bottom: 0;
+  }
+}
+
 // Stylize Blog Code
 // --------------------------------------------------
-.blog-code-wrapper {
+.code-wrapper {
   font-size: 1rem;
   background-color: $code-wrapper-color;
   border: 1px solid lighten($code-wrapper-color, 15%);
@@ -68,6 +100,7 @@ article {
   padding: 1em;
   border-top: 1px solid lighten($code-wrapper-color, 15%);
   text-align: center;
+
   h5 {
     font-family: $font-family-monospace;
     font-weight: normal;
@@ -83,11 +116,15 @@ article {
 .line-numbers {
   .line-numbers-rows {
     border-right: 1px solid lighten($code-wrapper-color, 15%);
+
     & > span:before {
       color: lighten(#2b303b, 15%);
 
     }
   }
 }
+
+
+
 
 

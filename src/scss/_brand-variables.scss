@@ -10,35 +10,45 @@
 //
 // --------------------------------------------------
 
+// Set Default Path For Font Awesome
+$fa-font-path: '../fonts';
+
+
 // 01. Colors
 
-$primary: #0b4061 !default;
-$secondary: #357c7b !default;
-$tertiary: #a0d39d !default;
-$quaternary: #6eb58f !default;
-$light: #e6e6e6 !default;
-$dark: #4c4c4d !default;
+// OpenText Default Colors (For Reference Only)
+$ot-navy: #111b58;
+$ot-indigo: #2e3d98;
+$ot-purple: #4f3690;
+$ot-steel: #7e929f;
+$ot-cloud: #e1e8f6;
 
-$light-gray: #e6e6e6;
-$medium-gray: #cacaca;
-$dark-gray: #4c4c4d;
+// Brand Colors (Swap these colors)
+$primary: #111b58;
+$secondary: #08b1e0;
+$tertiary: #4f3690;
+$quaternary: #7e929f;
+$light: #ffffff;
+$dark: #111111;
 
-$black: #222;
-$white: #fefefe;
+$light-gray: #f3f6fb;
+$medium-gray: #777;
+$dark-gray: #333333;
 
-$success: #28a745 !default;
-$info: #17a2b8 !default;
-$warning: #ffc107 !default;
-$danger: #dc3545 !default;
-$light: $light-gray !default;
-$dark: $dark-gray !default;
+$black: $dark;
+$white: #ffffff;
+
+$success: #28a745;
+$info: #17a2b8;
+$warning: #ffc107;
+$danger: #dc3545;
 
 $code-wrapper-color: #2b303b;
 
 // Maps Colors for dynamic Layout/Button Creation.
 $theme-colors: () !default;
 $theme-colors: map-merge((
-        "main": $white,
+        "main": $light,
         "alt": $light-gray,
         "primary": $primary,
         "secondary": $secondary,
@@ -48,12 +58,12 @@ $theme-colors: map-merge((
         "info": $info,
         "warning": $warning,
         "danger": $danger,
-        "light": $white,
+        "light": $light,
         "dark": $dark
 ), $theme-colors);
 
 // The yiq lightness value that determines when the lightness of color changes from "dark" to "light". Acceptable values are between 0 and 255.
-$yiq-contrasted-threshold: 200 !default;
+$yiq-contrasted-threshold: 200;
 
 // 02. Spacing
 //
@@ -61,8 +71,8 @@ $yiq-contrasted-threshold: 200 !default;
 // variables. Mostly focused on spacing.
 // You can add more entries to the $spacers map, should you need more variation.
 
-$spacer: 1rem !default;
-$spacers: () !default;
+$spacer: 1rem;
+$spacers: ();
 // stylelint-disable-next-line scss/dollar-variable-default
 $spacers: map-merge(
                 (
@@ -77,35 +87,35 @@ $spacers: map-merge(
 );
 
 // 03. Fonts
-$font-family-heading: 'Montserrat', "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
-$font-family-base: 'Montserrat', "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$font-family-heading: "activ-grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-family-base: "activ-grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 $font-family-monospace: Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 
-$body-color: darken($primary, 7.5%) !default;
+$body-color: darken($primary, 7.5%);
 
-$font-size-base: 1.1rem !default; // Assumes the browser default, typically `16px`
-$font-size-lg: ($font-size-base * 1.25) !default;
-$font-size-sm: ($font-size-base * .875) !default;
+$font-size-base: 1.2rem; // Assumes the browser default, typically `16px`
+$font-size-lg: ($font-size-base * 1.25);
+$font-size-sm: ($font-size-base * .875);
 
-$font-weight-light: 300 !default;
-$font-weight-normal: 400 !default;
-$font-weight-bold: 700 !default;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
 
-$font-weight-base: $font-weight-light !default;
-$line-height-base: 1.5 !default;
+$font-weight-base: $font-weight-normal;
+$line-height-base: 1.5;
 
-$h1-font-size: $font-size-base * 2.5 !default;
-$h2-font-size: $font-size-base * 2 !default;
-$h3-font-size: $font-size-base * 1.75 !default;
-$h4-font-size: $font-size-base * 1.5 !default;
-$h5-font-size: $font-size-base * 1.25 !default;
-$h6-font-size: $font-size-base !default;
+$h1-font-size: $font-size-base * 2.5;
+$h2-font-size: $font-size-base * 2;
+$h3-font-size: $font-size-base * 1.75;
+$h4-font-size: $font-size-base * 1.5;
+$h5-font-size: $font-size-base * 1.25;
+$h6-font-size: $font-size-base;
 
-//$headings-margin-bottom: ($spacer / 2) !default;
-$headings-font-family: inherit !default;
-$headings-font-weight: $font-weight-bold !default;
-$headings-line-height: 1.2 !default;
-$headings-color: inherit !default;
+//$headings-margin-bottom: ($spacer / 2);
+$headings-font-family: inherit;
+$headings-font-weight: $font-weight-normal;
+$headings-line-height: 1.2;
+$headings-color: inherit;
 
 $section-padding: 3rem;
 
@@ -114,9 +124,16 @@ $btn-text-color: $white;
 $btn-outline-weight: 2px;
 
 // 05. Navigation
-$navbar-dark-color: $light !default;
-$navbar-dark-hover-color: $secondary !default;
-$navbar-dark-active-color: $secondary !default;
-$navbar-dark-disabled-color: rgba($light, .25) !default;
-$navbar-dark-toggler-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-dark-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23") !default;
-$navbar-dark-toggler-border-color: rgba($light, .4) !default;
+$navbar-dark-color: $dark;
+$navbar-dark-hover-color: $secondary;
+$navbar-dark-active-color: $secondary;
+$navbar-dark-disabled-color: rgba($light, .25);
+$navbar-dark-toggler-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-dark-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23");
+$navbar-dark-toggler-border-color: rgba($light, .4);
+
+$navbar-light-color: rgba($black, .5);
+$navbar-light-hover-color: rgba($black, .7);
+$navbar-light-active-color: rgba($black, .9);
+$navbar-light-disabled-color: rgba($black, .3);
+$navbar-light-toggler-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-light-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23");
+$navbar-light-toggler-border-color: rgba($black, .1);

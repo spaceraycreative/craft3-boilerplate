@@ -1,6 +1,33 @@
 // Social Media Links
 // --------------------------------------------------
 
+// Instagram Section On Contact Page
+.instagram-content {
+  background-color: $secondary;
+
+  .heading {
+    color: $primary;
+
+    &::after {
+      background-color: $primary;
+    }
+  }
+
+  .subheading {
+    color: $primary;
+  }
+
+  img {
+    @include media-breakpoint-down(md) {
+      margin-bottom: 1rem;
+    }
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+
 .social-default {
   font-size: 1.6rem;
   padding-left: 0;
@@ -9,18 +36,23 @@
   @include media-breakpoint-down(sm) {
     text-align: center;
   }
+
   li {
     display: inline-block;
     margin-right: .1rem;
+
     &:first-child {
-        margin-left: 0;
+      margin-left: 0;
     }
+
     &:last-child {
       margin-right: 0;
     }
+
     a {
-      color: $white;
+      color: $primary;
       border-bottom: 0;
+
       &:hover {
         color: $secondary;
         border-bottom: 0;
@@ -38,62 +70,82 @@
   @include media-breakpoint-down(sm) {
     text-align: center;
   }
+
   li {
     display: inline;
     margin-right: 5px;
+
     a {
       border-bottom: 0;
+
       &:hover {
         border-bottom: 0;
       }
     }
+
     &:last-child {
       margin-right: 0;
     }
+
     &.facebook a {
       color: #3a5795;
+
       &:hover {
         color: darken(#3a5795, 7.5%);
       }
     }
+
     &.twitter a {
       color: #59adec;
+
       &:hover {
         color: darken(#59adec, 7.5%);
       }
     }
+
     &.instagram a {
       color: #e3dcc9;
+
       &:hover {
         color: darken(#e3dcc9, 7.5%);
       }
     }
+
     &.linkedin a {
       color: #1985bc;
+
       &:hover {
         color: darken(#1985bc, 7.5%);
       }
     }
+
     &.github a {
       color: #ac5c54;
+
       &:hover {
         color: darken(#ac5c54, 7.5%);
       }
     }
+
     &.codepen a {
       color: #fff;
+
       &:hover {
         color: darken(#fff, 7.5%);
       }
     }
+
     &.dribbble a {
       color: #ea4c89;
+
       &:hover {
         color: darken(#ea4c89, 7.5%);
       }
     }
+
     &.email a {
       color: #d54b3d;
+
       &:hover {
         color: darken(#d54b3d, 7.5%);
       }
@@ -110,40 +162,52 @@
   @include media-breakpoint-down(sm) {
     text-align: center;
   }
+
   li {
     display: inline;
     margin-right: 5px;
+
     &:last-child {
       margin-right: 0;
     }
+
     a {
       color: $white;
       border-bottom: 0;
+
       &:hover {
         border-bottom: 0;
       }
     }
+
     &.facebook a:hover {
       color: #3a5795;
     }
+
     &.twitter a:hover {
       color: #59adec;
     }
+
     &.instagram a:hover {
       color: #e3dcc9;
     }
+
     &.linkedin a:hover {
       color: #1985bc;
     }
+
     &.github a:hover {
       color: #ac5c54;
     }
+
     &.codepen a:hover {
       color: #fff;
     }
+
     &.dribbble a:hover {
       color: #ea4c89;
     }
+
     &.email a:hover {
       color: #d54b3d;
     }
@@ -159,63 +223,82 @@
   @include media-breakpoint-down(sm) {
     text-align: center;
   }
+
   li {
     font-size: 1.5rem;
     display: inline-flex;
     transition: .4s ease;
+
     a {
       color: $white;
       padding: .3em .5em;
       border-bottom: 0;
+
       &:hover {
         color: $white;
         border-bottom: 0;
       }
     }
+
     &.facebook {
       background-color: #3a5795;
+
       &:hover {
         background-color: darken(#3a5795, 7.5%);
       }
     }
+
     &.twitter {
       background-color: #59adec;
+
       &:hover {
         background-color: darken(#59adec, 7.5%);
       }
     }
+
     &.instagram {
       background-color: #e3dcc9;
+
       &:hover {
         background-color: darken(#3a5795, 7.5%);
       }
     }
+
     &.linkedin {
       background-color: #1985bc;
+
       &:hover {
         background-color: darken(#1985bc, 7.5%);
       }
     }
+
     &.github {
       background-color: #ac5c54;
+
       &:hover {
         background-color: darken(#3a5795, 7.5%);
       }
     }
+
     &.codepen {
       color: #fff;
+
       &:hover {
         background-color: darken(#3a5795, 7.5%);
       }
     }
+
     &.dribbble {
       color: #ea4c89;
+
       &:hover {
         background-color: darken(#3a5795, 7.5%);
       }
     }
+
     &.email {
       background-color: #d54b3d;
+
       &:hover {
         background-color: darken(#d54b3d, 7.5%);
       }
@@ -228,11 +311,14 @@
     margin-left: 0;
     padding-left: 0;
     text-align: left;
+
     li {
       margin-left: 1.5rem;
+
       &:first-child {
         margin-left: 0;
       }
+
       svg {
         fill: $primary;
         width: 1.5rem;

@@ -1,35 +1,38 @@
 // Home Page
 // --------------------------------------------------
 
-.hero {
-  &-content {
-    position: relative;
-    background-color: $primary;
-    background-size: cover;
-    background-position: 50%;
-    height: 60vh;
-    display: flex;
-    text-align: left;
-    align-items: center;
-    justify-content: left;
-    overflow: hidden;
-    @include media-breakpoint-down(sm) {
-      align-items: flex-end;
-    }
-  }
-  &-text-container {
-    font-size: 1rem;
-    background-color: $tertiary;
+.hero-bg {
+  @extend %hero-bg;
+}
+
+.hero-content {
+  position: relative;
+  background-color: $primary;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  .hero-content-text {
+    font-size: 2.1rem;
+    font-weight: bold;
+    color: $white;
+    max-width: 850px;
     padding: 1rem;
-    @include media-breakpoint-up(md) {
-      background-color: rgba($primary,.75);
-      padding: 1rem 1.5rem 1rem 6rem;
+    z-index: 500;
+    @include media-breakpoint-down(sm) {
+      font-size: 1.5rem;
     }
-    @include media-breakpoint-up(lg) {
-      font-size: 1.2rem;
-    }
-  }
-  &-text {
-    color: $light;
   }
 }
+
+.alert {
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.quote {
+  font-size: 1.6rem;
+  font-style: italic;
+}
+

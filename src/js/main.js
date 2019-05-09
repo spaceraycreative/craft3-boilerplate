@@ -1,3 +1,35 @@
+// Animate On Scroll Options
+// https://github.com/michalsnik/aos
+AOS.init({
+    duration: 800,
+});
+
+// Medium Zoom Options (Zoom image effect on blog images)
+// https://github.com/francoischalifour/medium-zoom
+const zoomBackground = mediumZoom('.zoom', {
+    background: '#fff' ,
+    margin: 15,
+    scrollOffset: 0,
+});
+
+// Owl Carousel Options
+// https://github.com/OwlCarousel2/OwlCarousel2
+$(document).ready(function () {
+    $('.owl-carousel').owlCarousel({
+        loop: true,
+        margin: 10,
+        autoplay: true,
+        autoplayTimeout: 5000,
+        autoplayHoverPause: true,
+        responsive: {
+            0: {
+                items: 1
+            }
+        }
+    });
+});
+
+// Header
 $(document).ready(function () {
     // Header Open Full Screen on mobile view
     $('.menu-icon').on('click', function () {
@@ -11,25 +43,18 @@ $(document).ready(function () {
     });
 });
 
-// /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
-// var prevScrollpos = window.pageYOffset;
-// window.onscroll = function() {
-//     var currentScrollPos = window.pageYOffset;
-//     if (prevScrollpos > currentScrollPos) {
-//         document.getElementById("header-content").style.top = "0";
-//     } else {
-//         document.getElementById("header-content").style.top = "-120px";
-//     }
-//     prevScrollpos = currentScrollPos;
-// };
 
-// Hide Navbar on scroll down
 
+// Add Smooth Scrolling between all # elements.
+// To disable smooth scrolling for items such as tab, use the prefix _ before the name.
+// Ex.) #_profile
 // Select all links with hashes
 $('a[href*="#"]')
 // Remove links that don't actually link to anything
     .not('[href="#"]')
     .not('[href="#0"]')
+    // Ignore link for tab elements
+    .not('[href^="#_"]')
     .click(function (event) {
         // On-page links
         if (
@@ -57,11 +82,11 @@ $('a[href*="#"]')
                         $target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
                         $target.focus(); // Set focus again
                     }
-                    ;
                 });
             }
         }
     });
+
 
 // Social Media Sharing Window
 var socialShares = document.querySelectorAll('.social-share a');

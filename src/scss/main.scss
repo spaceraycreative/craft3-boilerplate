@@ -8,7 +8,7 @@
 // Bootstrap Overrides
 @import "brand-variables";
 @import "variables";
-@import "mixins";
+@import "_mixins";
 @import "root";
 @import "reboot";
 
@@ -45,33 +45,49 @@
 @import "print";
 
 // Vendor Scss
-@import 'font-awesome';
+// Font Awesome
+@import 'fontawesome';
+@import 'brands';
+@import 'regular';
+@import 'solid';
+@import 'v4-shims';
+
 @import 'aos';
 @import 'vendor/zoom';
 @import 'vendor/magnific-popup';
+@import 'owl.carousel';
+@import 'owl.theme.default';
 
 // Fonts
 @import 'fonts';
 
+// Mixins
+@import '_mixins/mixins';
+
 // Partials
-@import '_partials/mixins';
 @import '_partials/animation';
 @import '_partials/typography';
 @import '_partials/forms';
 @import '_partials/layout';
+@import '_partials/cards';
 @import '_partials/buttons';
 @import '_partials/icons';
 @import '_partials/social-links';
 
 // Prism JS
-//@import '_prismjs/prism-theme';
-//@import '_prismjs/prism-line-numbers';
+@import '_prismjs/prism-theme';
+@import '_prismjs/prism-line-numbers';
 
 // Individual Page Styles
 @import '_pages/blog';
 @import '_pages/home';
+@import '_pages/about';
+@import '_pages/projects.scss';
+@import '_pages/project-entry.scss';
 
 // Custom Scss
-@import 'master';
 @import 'header';
 @import 'footer';
+@import 'master';
+
+@import 'site-specific';

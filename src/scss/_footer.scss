@@ -2,42 +2,67 @@
 // --------------------------------------------------
 
 .footer {
-  position: relative;
   padding-top: 3rem;
   padding-bottom: 1rem;
-  color: $white;
-  background: linear-gradient(to right, $tertiary, $primary);
-  a {
-    color: $white;
+  clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+  //@include angle(before, true);
+  background-image: url('../img/grad-bg.svg');
+  background-size: cover;
+  @include media-breakpoint-only(md) {
+    padding-top: 4rem;
+    clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);
   }
-  .social-default {
-    text-align: right;
-    @include media-breakpoint-down(sm) {
-      text-align: center;
-    }
-    li {
-      display: inline-block;
-      margin-right: 1rem;
-      &:first-child {
-        margin-left: 0;
-      }
-      &:last-child {
-        margin-right: 0;
-      }
-    }
-
+  @include media-breakpoint-up(lg) {
+    padding-top: 6rem;
+    clip-path: polygon(0 30%, 100% 0, 100% 100%, 0% 100%);
   }
 }
+
+
+//.footer {
+//  position: relative;
+//  padding-top: 1rem;
+//  padding-bottom: 1rem;
+//  color: $medium-gray;
+//
+//  a {
+//    color: $dark;
+//  }
+//
+//  .social-default {
+//    text-align: right;
+//    @include media-breakpoint-down(sm) {
+//      text-align: center;
+//    }
+//
+//    li {
+//      display: inline-block;
+//      margin-right: 1rem;
+//
+//      &:first-child {
+//        margin-left: 0;
+//      }
+//
+//      &:last-child {
+//        margin-right: 0;
+//      }
+//    }
+//
+//  }
+//}
 
 .copyright {
   font-size: .875rem;
   @include media-breakpoint-down(sm) {
-    order: 2;
+    //order: 2;
     text-align: center;
   }
+
   a {
+    color: $light;
+
     &:hover {
-      color: $secondary;
+      color: darken($light, 15%);
     }
   }
 }

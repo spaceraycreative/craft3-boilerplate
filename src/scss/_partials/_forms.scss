@@ -1,42 +1,6 @@
 // Forms
 // --------------------------------------------------
 
-.enupal-stripe-form {
-  textarea {
-    resize: vertical;
-  }
-  input {
-    @extend .form-control;
-    @extend .mb-2;
-    background-color: $light-gray;
-  }
-  textarea {
-    @extend .form-control;
-    @extend .mb-2;
-    background-color: $light-gray;
-  }
-  select {
-    @extend .form-control;
-    @extend .mb-2;
-    background-color: $light-gray;
-  }
-  .button {
-    @extend .btn;
-    @extend .btn-default;
-    padding-left: 1.75rem;
-    padding-right: 1.75rem;
-    @include media-breakpoint-down(sm) {
-      width: 100%;
-    }
-  }
-  .heading {
-    padding-bottom: 0;
-    margin-bottom: 0 !important;
-    &::after {
-      display: none;
-    }
-  }
-}
 
 .primary-content {
 
@@ -57,13 +21,15 @@
 .alt-content {
   .form {
     input {
-      background-color: $white;
+      background-color: $light;
     }
+
     textarea {
-      background-color: $white;
+      background-color: $light;
     }
+
     select {
-      background-color: $white;
+      background-color: $light;
     }
   }
 }
