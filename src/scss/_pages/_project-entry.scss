@@ -1,0 +1,173 @@
+// Project Entry
+// --------------------------------------------------
+
+
+.heading-wrap-projects {
+  z-index: 2;
+  background-color: $primary;
+  background-image: url('../img/grad-bg.svg');
+  height: 35vh;
+  background-size: cover;
+  background-position: center center;
+  @include media-breakpoint-up(md) {
+  }
+}
+
+.project-details-sidebar {
+  font-size: 1rem;
+
+  h4 {
+    font-size: 1.5rem;
+  }
+
+  h5 {
+    font-size: 1.3rem;
+  }
+}
+
+.project-status {
+
+  &-win {
+    margin-left: 8px;
+    color: $warning;
+  }
+
+  &-hot {
+    color: $danger;
+  }
+
+  &-warm {
+    color: $warning;
+  }
+
+  &-cold {
+    color: $info;
+  }
+
+  &-loss {
+    color: $gray-500;
+  }
+}
+
+.project-details {
+  @extend .pb-3;
+  @extend .mb-3;
+  border-bottom: 1px solid darken($light-gray, 7.5%);
+
+  &:last-child {
+    @extend .pb-0;
+    @extend .mb-0;
+    border-bottom: 0;
+  }
+}
+
+.project-details-header {
+  display: block;
+  padding: 1rem;
+  background-color: $primary;
+  border-top-left-radius: .5rem;
+  border-top-right-radius: .5rem;
+
+  h1, h2, h3, h4, h5, h6 {
+    color: $white;
+    margin-bottom: 0;
+  }
+}
+
+.project-details-container {
+  display: block;
+  padding: 1rem;
+  background-color: $light-gray;
+  border-bottom-left-radius: .5rem;
+  border-bottom-right-radius: .5rem;
+
+  .social-default {
+    margin-bottom: 0;
+  }
+}
+
+.project-body {
+  order: 2;
+  @include media-breakpoint-down(sm) {
+    order: 1;
+  }
+
+  .divider {
+    @include media-breakpoint-down(sm) {
+      border-bottom: 3px solid $primary;
+      margin: 1rem auto;
+    }
+  }
+}
+
+.text-section {
+  margin: 3rem 0;
+}
+
+.categories {
+  margin-left: 0;
+  padding-left: 0;
+  margin-bottom: 0;
+
+  li {
+    list-style-type: none;
+    display: inline;
+    //margin-right: .5rem;
+
+    &:after {
+      content: ',';
+    }
+
+    &:last-child {
+      &::after {
+        content: '';
+      }
+    }
+  }
+}
+
+.collaborator-info {
+
+}
+
+.collaborator-container {
+  @extend .pb-3;
+  @extend .mb-3;
+  border-bottom: 1px solid darken($light-gray, 7.5%);
+  &:last-child {
+    @extend .mb-0;
+    border-bottom: 0;
+  }
+}
+
+.project-lead {
+  color: $warning;
+}
+
+.related-files {
+  li {
+  }
+}
+
+.project-navigation {
+
+}
+
+
+.avatar-default {
+  background-color: $secondary;
+  display: inline-block;
+  text-align: center;
+  width: 56.98px;
+  height: 56.98px;
+  line-height: 56.98px;
+  border-radius: 50%;
+  vertical-align: middle;
+
+  .avatar-text {
+    font-weight: $font-weight-bold;
+    color: color-yiq($secondary);
+    font-size: 1.3rem;
+  }
+}
+

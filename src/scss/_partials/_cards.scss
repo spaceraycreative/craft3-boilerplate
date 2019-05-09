@@ -1,0 +1,43 @@
+// Master Styles
+// --------------------------------------------------
+
+// Cards Mixin Reference -card-styles($bg-color, $heading-bg-color, $text-color, $btn-color)
+.main-content {
+  @include card-styles($light-gray, $primary, $dark, $primary);
+}
+
+.alt-content {
+  @include card-styles($light, $primary, $dark, $primary);
+}
+
+.primary-content {
+  @include card-styles($light-gray, $secondary, $dark, $secondary);
+}
+
+.secondary-content {
+  @include card-styles($light-gray, $tertiary, $dark, $tertiary);
+}
+
+.tertiary-content {
+  @include card-styles($light-gray, $secondary, $dark, $secondary);
+}
+
+.quaternary-content {
+  @include card-styles($light-gray, $primary, $dark, $primary);
+}
+
+.light-content {
+  @include card-styles($light-gray, $primary, $dark, $primary);
+}
+
+.dark-content {
+  @include card-styles($light-gray, $primary, $dark, $primary);
+}
+
+.bg-image-light-overlay {
+  @include card-styles($light-gray, $secondary, $dark, $secondary);
+}
+
+.bg-image-dark-overlay {
+  @include card-styles($light-gray, $secondary, $dark, $secondary);
+}

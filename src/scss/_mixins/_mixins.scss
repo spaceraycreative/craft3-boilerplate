@@ -1,0 +1,236 @@
+// Mixins
+// --------------------------------------------------
+
+@mixin angle($pseudo, $flip: false, $angle: 3deg) {
+  // Possible values for $pseudo are: before, after, both
+  @if $pseudo == 'before' or $pseudo == 'after' or $pseudo == 'both' {
+    position: relative;
+    z-index: 1000;
+    $selector: if($pseudo == 'both', '&:before,&:after', '&:#{$pseudo}');
+    #{$selector} {
+      background: inherit;
+      content: '';
+      display: block;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      right: 0;
+      z-index: -1;
+    }
+    @if $pseudo == 'before' {
+      #{$selector} {
+        top: 0;
+        @if $flip {
+          transform: skewY($angle * -1);
+          transform-origin: 0 0;
+        } @else {
+          transform: skewY($angle);
+          transform-origin: 100% 0;
+        }
+      }
+    }
+    @if $pseudo == 'after' {
+      #{$selector} {
+        bottom: 0;
+        @if $flip {
+          transform: skewY($angle);
+          transform-origin: 0 100%;
+        } @else {
+          transform: skewY($angle * -1);
+          transform-origin: 100%;
+        }
+      }
+    }
+    @if $pseudo == 'both' {
+      &::before {
+        top: 0;
+        @if $flip {
+          transform: skewY($angle * -1);
+          transform-origin: 0 0;
+        } @else {
+          transform: skewY($angle);
+          transform-origin: 100% 0;
+        }
+      }
+      &::after {
+        bottom: 0;
+        @if $flip {
+          transform: skewY($angle);
+          transform-origin: 0 0;
+        } @else {
+          transform: skewY($angle * -1);
+          transform-origin: 100%;
+        }
+      }
+    }
+  }
+}
+
+// Angle Usage
+// slanted edges here
+.edge--bottom {
+  @include angle(after);
+}
+
+.edge--bottom--reverse {
+  @include angle(after, true);
+}
+
+.edge--top {
+  @include angle(before);
+}
+
+.edge--top--reverse {
+  @include angle(before, true);
+}
+
+.edge--both {
+  @include angle(both);
+}
+
+.edge--both--reverse {
+  @include angle(both, true);
+}
+
+%hero-bg {
+  //background-image: url('../img/grad-bg.svg');
+  background-size: cover;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: $black;
+    opacity: .2;
+    //background-image: url('../img/space-stars.svg');
+    //animation: flicker 4s infinite;
+    //animation-timing-function: linear;
+  }
+}
+
+// Stylize Content Sections
+@mixin content-styles($bg-color, $heading-color, $text-color, $link-color, $btn-color, $accent-color) {
+  position: relative;
+  background-color: $bg-color;
+  color: $text-color;
+
+  h1, h2, h3, h4, h5, h6 {
+    color: $heading-color;
+  }
+
+  p > a,
+  p > em > a,
+  p > strong > a,
+  li > a,
+  .link {
+    color: $link-color;
+
+    &:hover {
+      color: darken($link-color, 15%);
+    }
+  }
+
+  hr {
+    color: $accent-color;
+  }
+
+  blockquote {
+    border-color: $accent-color;
+  }
+
+  .heading {
+    &::after {
+      background-color: $heading-color;
+    }
+  }
+  .btn-default {
+    background-color: $btn-color;
+    color: color-yiq($btn-color);
+
+    &:hover,
+    &:active {
+      color: color-yiq($btn-color);
+      background-color: darken($btn-color, 7.5%);
+    }
+  }
+  .btn-outline-default {
+    color: $btn-color;
+    border-color: $btn-color;
+    background-color: transparent;
+
+    &:hover {
+      color: color-yiq($btn-color);
+      background-color: $btn-color;
+    }
+  }
+}
+
+// Stylize BG Image Overlay Styles
+@mixin bg-overlay-content-styles($bg-overlay-color) {
+  z-index: 2;
+  position: relative;
+  background-size: cover;
+  background-position: center center;
+
+  &::before {
+    z-index: -1;
+    position: absolute;
+    background: fade-out($bg-overlay-color, 0.5);
+    content: '';
+    height: 100%;
+    width: 100%;
+    display: block;
+    left: 0;
+    top: 0;
+  }
+}
+
+// Stylize Cards for different content sections
+@mixin card-styles($bg-color, $heading-bg-color, $text-color, $btn-color) {
+  .card {
+    background-color: $bg-color;
+    border: 0;
+
+    .card-header {
+      background-color: $heading-bg-color;
+      color: color-yiq($heading-bg-color);
+      border: 1px solid scale-color($heading-bg-color, $lightness: -7.5%);
+    }
+
+    .card-body {
+      color: $text-color;
+      border-top: 0;
+      border-left: 1px solid scale-color($bg-color, $lightness: -7.5%);
+      border-right: 1px solid scale-color($bg-color, $lightness: -7.5%);
+      border-bottom: 1px solid scale-color($bg-color, $lightness: -7.5%);
+
+      h1, h2, h3, h4, h5, h6 {
+        color: $text-color;
+      }
+    }
+
+    .btn-default {
+      background-color: $btn-color;
+      color: color-yiq($btn-color);
+
+      &:hover,
+      &:active {
+        color: color-yiq($btn-color);
+        background-color: darken($btn-color, 7.5%);
+      }
+    }
+
+    .btn-outline-default {
+      color: $btn-color;
+      border-color: $btn-color;
+      background-color: transparent;
+
+      &:hover {
+        color: color-yiq($btn-color);
+        background-color: $btn-color;
+      }
+    }
+  }
+}
