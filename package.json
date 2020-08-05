@@ -102,7 +102,7 @@
         "siteIcon": "./public/img/site/favicon.*"
     },
     "dependencies": {
-        "bootstrap": "4.0.0",
+        "bootstrap": "4.3.1",
         "popper.js": "^1.12.9",
         "jquery": "^3.2",
         "lazysizes": "^4.0.2",
