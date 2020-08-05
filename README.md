@@ -1,3 +1,9 @@
+# This build is no longer maintained. 
+Use [Craft Vue Tailwind](https://github.com/chasegiunta/craft-vue-tailwind) instead.
+---
+---
+---
+
 Spaceray Creative - Craft 3.x Boilerplate
 ==========
 This is the Spaceray Creative boilerplate project for any [Craft CMS](https://www.craftcms.com) 3.x project. 
