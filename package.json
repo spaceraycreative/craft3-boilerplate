@@ -105,7 +105,7 @@
         "bootstrap": "4.3.1",
         "popper.js": "^1.12.9",
         "jquery": "^3.5",
-        "lazysizes": "^4.0.2",
+        "lazysizes": "^5.2.1",
         "aos": "^2.2.0",
         "normalize.css": "^5.0.0",
         "font-awesome": "^4.7.0",
